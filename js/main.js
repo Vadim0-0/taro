@@ -403,6 +403,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Константы
   const totalPages = 14;
@@ -507,6 +509,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.querySelector(".productPage-hero__content-images__img img");
+  const buttons = document.querySelectorAll(".productPage-hero__content-images__btns button");
+
+  let currentIndex = 0;
+
+  // Функция для обновления основного изображения и класса "active"
+  function updateMainImage(index) {
+    const newImageSrc = buttons[index].querySelector("img").getAttribute("src");
+    mainImage.setAttribute("src", newImageSrc);
+
+    // Удаляем класс active у всех кнопок и добавляем его к текущей
+    buttons.forEach((button) => button.classList.remove("active"));
+    buttons[index].classList.add("active");
+  }
+
+  // Обработчик нажатия на кнопку
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      currentIndex = index;
+      updateMainImage(index);
+    });
+  });
+
+  // Свайп для переключения изображений
+  let startX = 0;
+
+  mainImage.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  mainImage.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const threshold = 50; // минимальное расстояние для распознавания свайпа
+
+    if (endX - startX > threshold) {
+      // свайп вправо
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : buttons.length - 1;
+    } else if (startX - endX > threshold) {
+      // свайп влево
+      currentIndex = (currentIndex < buttons.length - 1) ? currentIndex + 1 : 0;
+    }
+
+    updateMainImage(currentIndex);
+  });
+});
+
 
 
 
