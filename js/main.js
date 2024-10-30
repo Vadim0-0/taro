@@ -510,7 +510,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function () {
   const mainImage = document.querySelector(".productPage-hero__content-images__img img");
   const buttons = document.querySelectorAll(".productPage-hero__content-images__btns button");
 
@@ -556,6 +556,249 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMainImage(currentIndex);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let currentQuestionIndex = 0;
+  const questionsCount = document.querySelectorAll('.pageTest-test__content-questions__question').length;
+
+  // Получаем все кнопки навигации
+  const prevButtons = document.querySelectorAll('.prev-button');
+  const nextButtons = document.querySelectorAll('.next-button');
+  const finishButton = document.querySelector('.finish-button');
+  const restartButton = document.querySelector('.restart-button');
+
+  // Функция для отображения кнопок шагов
+  function renderSteps() {
+      const stepsContainer = document.getElementById('pageTest-steps');
+      for (let i = 0; i < questionsCount; i++) {
+          const stepButton = document.createElement('button');
+          stepButton.classList.add('step-button');
+          stepButton.textContent = i + 1;
+          stepButton.onclick = () => goToQuestion(i);
+          stepsContainer.appendChild(stepButton);
+      }
+  }
+
+  // Функция для обновления состояния кнопок шагов
+  function updateStepButtons() {
+      const stepButtons = document.querySelectorAll('.step-button');
+      stepButtons.forEach((button, index) => {
+          button.classList.toggle('completed', index < currentQuestionIndex);
+          button.classList.toggle('active', index === currentQuestionIndex);
+      });
+  }
+
+  // Функция для обновления видимости вопросов
+  function updateQuestionVisibility() {
+      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
+      questions.forEach((question, index) => {
+          question.classList.toggle('active', index === currentQuestionIndex);
+          question.classList.toggle('fade-out', index !== currentQuestionIndex);
+      });
+
+      updateQuestionCount();
+      updateContainerHeight();
+      markCompleted();
+  }
+
+  // Функция для обновления высоты контейнера
+  function updateContainerHeight() {
+      const activeQuestion = document.querySelector('.pageTest-test__content-questions__question.active');
+      const resultBlock = document.getElementById('result');
+      const container = document.getElementById('question-container');
+
+      // Подстраиваем высоту под активный вопрос или результат
+      container.style.height = activeQuestion ? `${activeQuestion.offsetHeight}px` : `${resultBlock.offsetHeight}px`;
+  }
+
+  // Функция для обновления счетчика вопросов
+  function updateQuestionCount() {
+      const questionCountElement = document.querySelector('.pageTest-test__content-questions__question.active .question-count');
+      questionCountElement.textContent = `Вопрос ${currentQuestionIndex + 1} из ${questionsCount}`;
+  }
+
+  // Функция для перехода к следующему вопросу
+  function nextQuestion() {
+      if (currentQuestionIndex < questionsCount - 1) {
+          currentQuestionIndex++;
+          updateQuestionVisibility();
+      } else {
+          showResult();
+      }
+  }
+
+  // Функция для перехода к предыдущему вопросу
+  function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          updateQuestionVisibility();
+      }
+  }
+
+  // Функция для отображения результата
+  function showResult() {
+      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
+      questions.forEach(q => q.classList.remove('active'));
+      document.getElementById('result').style.display = 'block';
+      updateContainerHeight(); // Подстраиваем высоту контейнера под высоту блока результата
+  }
+
+  // Функция для перезапуска теста
+  function restartTest() {
+      currentQuestionIndex = 0;
+      updateStepButtons(); // обновляем кнопки шагов
+      updateQuestionVisibility();
+      document.getElementById('result').style.display = 'none';
+
+      // Сбросить состояние всех вопросов
+      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
+      questions.forEach(q => {
+          const radios = q.querySelectorAll('input[type="radio"]');
+          radios.forEach(radio => {
+              radio.checked = false; // Сброс состояния выбора
+          });
+      });
+
+      document.querySelectorAll('.step-button').forEach(button => button.classList.remove('completed'));
+
+      // Обновляем высоту контейнера
+      updateContainerHeight();
+  }
+
+  // Функция для отметки завершенного вопроса
+  function markCompleted() {
+      const stepButtons = document.querySelectorAll('.step-button');
+      stepButtons.forEach((button, index) => {
+          if (index < currentQuestionIndex) {
+              button.classList.add('completed');
+          } else if (index === currentQuestionIndex) {
+              button.classList.remove('completed');
+          }
+      });
+  }
+
+  // Функция для перехода к выбранному вопросу
+  function goToQuestion(index) {
+      currentQuestionIndex = index;
+      updateQuestionVisibility();
+  }
+
+  // Привязываем функции к кнопкам
+  prevButtons.forEach(button => button.onclick = prevQuestion);
+  nextButtons.forEach(button => {
+      button.onclick = () => {
+          if (currentQuestionIndex === questionsCount - 1) {
+              showResult(); // Показываем результат на последнем вопросе
+          } else {
+              nextQuestion();
+          }
+      };
+  });
+
+  // Привязываем действия к кнопкам завершения и перезапуска
+  finishButton.onclick = showResult;
+  restartButton.onclick = restartTest;
+
+  // Запуск
+  renderSteps();
+  updateQuestionVisibility();
+  updateContainerHeight();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cardCount = 15;
+  const cardsContainer = document.getElementById('cards');
+  let cards = [];
+
+  const cardLinks = [
+      "https://example.com/card1", "https://example.com/card2", "https://example.com/card3",
+      "https://example.com/card4", "https://example.com/card5", "https://example.com/card6",
+      "https://example.com/card7", "https://example.com/card8", "https://example.com/card9",
+      "https://example.com/card10", "https://example.com/card11", "https://example.com/card12",
+      "https://example.com/card13", "https://example.com/card14", "https://example.com/card15"
+  ];
+
+  function createCards() {
+      for (let i = 0; i < cardCount; i++) {
+          const card = document.createElement('div');
+          card.classList.add('card');
+          card.dataset.index = i;
+          card.dataset.link = cardLinks[i];
+          card.style.zIndex = cardCount - i;
+          card.style.opacity = 1 - i * 0.06;
+
+          const offset = (i % 2 === 0 ? -1 : 1) * Math.floor((i + 1) / 2) * 40;
+          card.style.transform = `translateX(${offset}px) translateZ(-${i * 15}px)`;
+
+          cards.push(card);
+          cardsContainer.appendChild(card);
+      }
+      updateCentralCardLink();
+  }
+
+  function bringToFront(index) {
+      const selectedCard = cards.splice(index, 1)[0];
+      cards.unshift(selectedCard);
+      updateCards();
+  }
+
+  function updateCards() {
+      cards.forEach((card, i) => {
+          card.style.zIndex = cardCount - i;
+          card.style.opacity = 1 - i * 0.06;
+
+          const offset = (i % 2 === 0 ? -1 : 1) * Math.floor((i + 1) / 2) * 40;
+          card.style.transform = `translateX(${offset}px) translateZ(-${i * 15}px)`;
+      });
+      updateCentralCardLink();
+  }
+
+  function updateCentralCardLink() {
+      cards.forEach(card => card.style.pointerEvents = 'none');
+      const frontCard = cards[0];
+      frontCard.style.pointerEvents = 'auto';
+      frontCard.onclick = () => window.open(frontCard.dataset.link, "_blank");
+  }
+
+  function shuffleAndPick() {
+      cards.sort(() => Math.random() - 0.5);
+      const randomIndex = Math.floor(Math.random() * cards.length);
+      bringToFront(randomIndex);
+  }
+
+  function setupSwipe() {
+      let startX = 0;
+      let endX = 0;
+
+      cardsContainer.addEventListener('mousedown', (e) => startX = e.clientX);
+      cardsContainer.addEventListener('mouseup', (e) => {
+          endX = e.clientX;
+          handleSwipe();
+      });
+
+      cardsContainer.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+      cardsContainer.addEventListener('touchend', (e) => {
+          endX = e.changedTouches[0].clientX;
+          handleSwipe();
+      });
+
+      function handleSwipe() {
+          if (startX - endX > 50) {
+              bringToFront(1); // Свайп влево: следующая карта на передний план
+          } else if (endX - startX > 50) {
+              bringToFront(cards.length - 1); // Свайп вправо: последняя карта вперед
+          }
+      }
+  }
+
+  createCards();
+  setupSwipe();
+  document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
+});
+
+
 
 
 
