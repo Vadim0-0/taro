@@ -211,6 +211,35 @@ document.addEventListener("DOMContentLoaded", function() {
   coursesButton.addEventListener("click", toggleCourses);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const coursesBlock = document.getElementById("header-courses-block");
+  const coursesButton = document.getElementById("header-courses-open");
+  const coursesMenu = document.getElementById("courses-menu");
+
+  // Функция для переключения класса
+  function toggleCoursesBlock() {
+    coursesBlock.classList.toggle("active");
+  }
+
+  // Обработчик на кнопку, чтобы добавить/убрать класс
+  coursesButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Останавливаем всплытие, чтобы не закрыть меню сразу
+    toggleCoursesBlock();
+  });
+
+  // Обработчик на документ, чтобы закрыть меню при клике вне его
+  document.addEventListener("click", function (event) {
+    if (!coursesBlock.contains(event.target)) {
+      coursesBlock.classList.remove("active");
+    }
+  });
+
+  // Обработчик для закрытия меню при уходе курсора из меню
+  coursesMenu.addEventListener("mouseleave", function () {
+    coursesBlock.classList.remove("active");
+  });
+});
+
 
 
 
@@ -797,6 +826,140 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSwipe();
   document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cardList = document.querySelector(".pageCardDay-hero__content-scroll__list");
+  const cards = document.querySelectorAll(".product-card");
+  const btnPrev = document.getElementById("pageCardDay-btn-prev");
+  const btnNext = document.getElementById("pageCardDay-btn-next");
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  // Calculate card width and margin dynamically
+  const getCardWidth = () => {
+    const cardStyle = window.getComputedStyle(cards[0]);
+    const cardWidth = cards[0].offsetWidth;
+    const cardMarginRight = parseInt(cardStyle.marginRight, 10);
+    return cardWidth + cardMarginRight;
+  };
+
+  // Apply smooth transition effect to the card list
+  const setTransition = (enable) => {
+    cardList.style.transition = enable ? 'transform 0.5s ease' : 'none';
+  };
+
+  // Function to scroll to a specific index with animation
+  const scrollToIndex = (index) => {
+    if (isAnimating) return;
+    isAnimating = true;
+    setTransition(true);
+
+    const scrollAmount = getCardWidth() * index;
+    cardList.style.transform = `translateX(-${scrollAmount}px)`;
+
+    // Remove transition after animation to reset for next interaction
+    cardList.addEventListener('transitionend', () => {
+      isAnimating = false;
+      setTransition(false);
+    }, { once: true });
+  };
+
+  // Move to the next card
+  const nextCard = () => {
+    if (isAnimating || currentIndex >= cards.length - 1) return;
+    currentIndex++;
+    scrollToIndex(currentIndex);
+  };
+
+  // Move to the previous card
+  const prevCard = () => {
+    if (isAnimating || currentIndex <= 0) return;
+    currentIndex--;
+    scrollToIndex(currentIndex);
+  };
+
+  // Swipe functionality
+  let startX = 0;
+  let isSwiping = false;
+
+  cardList.addEventListener("touchstart", (e) => {
+    if (isAnimating) return; // Prevent swipe while animating
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+  });
+
+  cardList.addEventListener("touchmove", (e) => {
+    if (!isSwiping) return;
+
+    const moveX = e.touches[0].clientX - startX;
+
+    if (moveX > 50) {
+      prevCard();
+      isSwiping = false;
+    } else if (moveX < -50) {
+      nextCard();
+      isSwiping = false;
+    }
+  });
+
+  cardList.addEventListener("touchend", () => {
+    isSwiping = false;
+  });
+
+  // Event listeners for buttons
+  btnNext.addEventListener("click", nextCard);
+  btnPrev.addEventListener("click", prevCard);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const categoriesBlock = document.getElementById('blogs-categories-block');
+  const toggleButton = document.getElementById('blogs-categories-title');
+  const contentBlock = categoriesBlock.querySelector('.blogs-hero__content-left__block-choice');
+  let isExpanded = false;
+
+  function setInitialHeight() {
+    if (window.innerWidth <= 768) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+    } else {
+      categoriesBlock.style.height = '';
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  }
+
+  function toggleBlock() {
+    if (window.innerWidth <= 768) {
+      if (isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+        categoriesBlock.classList.remove('active');
+      } else {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+        categoriesBlock.classList.add('active');
+      }
+      isExpanded = !isExpanded;
+    }
+  }
+
+  toggleButton.addEventListener('click', toggleBlock);
+
+  document.addEventListener('click', function(event) {
+    if (isExpanded && !categoriesBlock.contains(event.target)) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  });
+
+  window.addEventListener('resize', setInitialHeight);
+  setInitialHeight();
+});
+
+
+
+
+
 
 
 
