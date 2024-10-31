@@ -2,6 +2,7 @@
 
   & .container {
     position: relative;
+    overflow: inherit
   }
 
   &__content {
@@ -25,6 +26,39 @@
         @include flex-center(5px);
 
         &-item {
+
+          &.courses {
+            position: relative;
+            width: 90px;
+            transition: all 0.5s ease;
+
+            & .courses-menu {
+              position: absolute;
+              width: 100%;
+              opacity: 0;
+              visibility: hidden;
+              border-radius: 0 0 15px 15px;
+              background-color: var(--white);
+              transition: all 0.5s ease;
+            }
+
+            &.active {
+              border-radius: 15px 15px 0 0;
+              background-color: var(--white);
+
+              & .courses-menu {
+                opacity: 1;
+                visibility: visible;
+              }
+
+              & button {
+
+                & svg {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+          }
 
           & a {
             display: flex;
@@ -62,6 +96,29 @@
             opacity: 0.7;
             @include transition;
             text-wrap: nowrap;
+
+            & svg {
+              stroke: #222222;
+              transition: all 0.5s ease;
+            }
+
+            &:hover {
+              color: var(--siniy);
+              background-color: rgba(16, 125, 172, 0.1);
+
+              & svg {
+                stroke: var(--siniy);
+              }
+            }
+
+            &:active {
+              color: var(--white);
+              background-color: var(--siniy);
+
+              & svg {
+                stroke: var(--white);
+              }
+            }
           }
 
           &-mobile {
