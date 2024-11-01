@@ -827,6 +827,44 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
 });
 
+
+
+document.addEventListener("scroll", function () {
+// Выбираем элементы
+const imgContainer = document.getElementById('pageCardDay-hero__content-img');
+const heroContent = document.getElementById('pageCardDay-hero__content');
+
+// Получаем начальное значение top из CSS
+const computedStyle = window.getComputedStyle(imgContainer);
+const initialTop = parseInt(computedStyle.top, 10); // Преобразуем значение top в число
+
+// Функция для управления положением изображения
+function handleScroll() {
+    if (window.innerWidth >= 1024) { // Условие для экранов шириной 1024px и больше
+        const heroContentRect = heroContent.getBoundingClientRect();
+        const imgContainerHeight = imgContainer.clientHeight;
+
+        // Проверяем, если блок находится в зоне фиксации
+        if (heroContentRect.top <= initialTop && heroContentRect.bottom > imgContainerHeight + initialTop) {
+            imgContainer.classList.add('fixed'); // Добавляем класс фиксации
+        }
+        // Если блок выходит из зоны фиксации (прокручиваем вверх)
+        else {
+            imgContainer.classList.remove('fixed'); // Убираем класс фиксации
+        }
+    } else {
+        imgContainer.classList.remove('fixed'); // Убираем класс для экранов меньше 1024px
+    }
+}
+
+// Добавляем обработчик событий
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', handleScroll); // Перепроверка при изменении размера окна
+
+
+
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const cardList = document.querySelector(".pageCardDay-hero__content-scroll__list");
   const cards = document.querySelectorAll(".product-card");
@@ -913,6 +951,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const categoriesBlock = document.getElementById('blogs-categories-block');
   const toggleButton = document.getElementById('blogs-categories-title');
@@ -955,6 +995,81 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', setInitialHeight);
   setInitialHeight();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Функция для правильного склонения слова "ответ"
+  const getDeclension = (number, singular, few, many) => {
+    const mod10 = number % 10;
+    const mod100 = number % 100;
+
+    if (mod100 >= 11 && mod100 <= 14) return many;
+    if (mod10 === 1) return singular;
+    if (mod10 >= 2 && mod10 <= 4) return few;
+    return many;
+  };
+
+  // Функция для установки начальных значений высоты и текста кнопок
+  const initializeBlocks = () => {
+    document.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block').forEach(block => {
+      const topBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-top');
+      const bottomBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-bottom');
+      const answersButton = block.querySelector('.pageBlog-comments-answers');
+
+      if (topBlock && answersButton) {
+        // Устанавливаем высоту блока равной высоте topBlock
+        block.style.height = `${topBlock.offsetHeight}px`;
+
+        if (bottomBlock) {
+          // Устанавливаем текст кнопки с количеством ответов и правильным склонением
+          const replyCount = bottomBlock.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block-top').length;
+          const replyText = getDeclension(replyCount, 'ответ', 'ответа', 'ответов');
+          answersButton.textContent = `Показать ${replyCount} ${replyText}`;
+        }
+      }
+    });
+  };
+
+  // Обработчик кликов для кнопки "Показать ответы"
+  document.querySelectorAll('.pageBlog-comments-answers').forEach(button => {
+    button.addEventListener('click', () => {
+      const block = button.closest('.blogs-hero__content-info__comments-bloсks__block');
+      const topBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-top');
+      const bottomBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-bottom');
+
+      if (!bottomBlock) return;
+
+      // Если блок развернут, сворачиваем его и меняем текст кнопки
+      if (block.classList.contains('expanded')) {
+        block.style.height = `${topBlock.offsetHeight}px`;
+        const replyCount = bottomBlock.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block-top').length;
+        const replyText = getDeclension(replyCount, 'ответ', 'ответа', 'ответов');
+        button.textContent = `Показать ${replyCount} ${replyText}`;
+        block.classList.remove('expanded');
+      } else {
+        // Разворачиваем блок и меняем текст кнопки на "Скрыть ответы"
+        block.style.height = `${topBlock.offsetHeight + bottomBlock.offsetHeight}px`;
+        button.textContent = "Скрыть ответы";
+        block.classList.add('expanded');
+      }
+    });
+  });
+
+  // Обработчик для кнопки "Ответить", чтобы показать скрытое поле ответа
+  document.querySelectorAll('.pageBlog-comments-respond').forEach(button => {
+    button.addEventListener('click', () => {
+      const respondInput = button.closest('.blogs-hero__content-info__comments-bloсks__block-top')
+                                  .querySelector('.pageBlogs-comments-respond');
+
+      if (respondInput) {
+        respondInput.classList.toggle('visible');
+      }
+    });
+  });
+
+  // Вызов функции инициализации блоков при загрузке страницы
+  initializeBlocks();
+});
+
 
 
 
