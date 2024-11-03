@@ -327,7 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 /* Index - faq */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -433,85 +432,88 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* Листание листов с пагинацией */
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Константы
-  const totalPages = 14;
+  // Константы
+  let totalPages = document.querySelectorAll('[id^="page-"]').length; // Подсчитываем количество страниц
   let currentPage = 1;
 
   // SVG-иконки для стрелок
   const leftArrowSVG = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.5 5L8.5 12L15.5 19" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>`;
+                          <path d="M15.5 5L8.5 12L15.5 19" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>`;
   const rightArrowSVG = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M8.5 5L15.5 12L8.5 19" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>`;
 
   // Функция отображения выбранной страницы
   function showPage(page) {
-    for (let i = 1; i <= totalPages; i++) {
-      const pageElement = document.getElementById(`page-${i}`);
-      if (pageElement) pageElement.classList.remove('active');
-    }
+      for (let i = 1; i <= totalPages; i++) {
+          const pageElement = document.getElementById(`page-${i}`);
+          if (pageElement) pageElement.classList.remove('active');
+      }
 
-    const activePage = document.getElementById(`page-${page}`);
-    if (activePage) {
-      activePage.classList.add('active');
-      const cardContainer = document.getElementById('cardContainer');
-      cardContainer.style.height = `${activePage.offsetHeight}px`;
-    }
+      const activePage = document.getElementById(`page-${page}`);
+      if (activePage) {
+          activePage.classList.add('active');
+          const cardContainer = document.getElementById('cardContainer');
+          cardContainer.style.height = `${activePage.offsetHeight}px`;
+      }
   }
 
   // Генерация кнопок пагинации
   function renderPagination() {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
 
-    // Кнопка "Назад"
-    const prevButton = document.createElement('button');
-    prevButton.innerHTML = leftArrowSVG;
-    prevButton.className = currentPage === 1 ? 'disabled' : '';
-    prevButton.onclick = () => goToPage(currentPage - 1);
-    pagination.appendChild(prevButton);
+      // Кнопка "Назад"
+      const prevButton = document.createElement('button');
+      prevButton.innerHTML = leftArrowSVG;
+      prevButton.className = currentPage === 1 ? 'disabled' : '';
+      prevButton.onclick = () => goToPage(currentPage - 1);
+      pagination.appendChild(prevButton);
 
-    // Кнопки для страниц
-    for (let i = 1; i <= totalPages; i++) {
-      if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-        const pageButton = document.createElement('button');
-        pageButton.innerText = i;
-        pageButton.className = i === currentPage ? 'active' : '';
-        pageButton.onclick = () => goToPage(i);
-        pagination.appendChild(pageButton);
-      } else if (i === currentPage - 3 || i === currentPage + 3) {
-        const dotsButton = document.createElement('button');
-        dotsButton.innerText = '...';
-        dotsButton.className = 'dots';
-        dotsButton.disabled = true; // Делаем кнопку неактивной
-        pagination.appendChild(dotsButton);
+      // Кнопки для страниц
+      for (let i = 1; i <= totalPages; i++) {
+          if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+              const pageButton = document.createElement('button');
+              pageButton.innerText = i;
+              pageButton.className = i === currentPage ? 'active' : '';
+              pageButton.onclick = () => goToPage(i);
+              pagination.appendChild(pageButton);
+          } else if (i === currentPage - 3 || i === currentPage + 3) {
+              const dotsButton = document.createElement('button');
+              dotsButton.innerText = '...';
+              dotsButton.className = 'dots';
+              dotsButton.disabled = true; // Делаем кнопку неактивной
+              pagination.appendChild(dotsButton);
+          }
       }
-    }
 
-    // Кнопка "Вперед"
-    const nextButton = document.createElement('button');
-    nextButton.innerHTML = rightArrowSVG;
-    nextButton.className = currentPage === totalPages ? 'disabled' : '';
-    nextButton.onclick = () => goToPage(currentPage + 1);
-    pagination.appendChild(nextButton);
+      // Кнопка "Вперед"
+      const nextButton = document.createElement('button');
+      nextButton.innerHTML = rightArrowSVG;
+      nextButton.className = currentPage === totalPages ? 'disabled' : '';
+      nextButton.onclick = () => goToPage(currentPage + 1);
+      pagination.appendChild(nextButton);
   }
 
   // Переключение на указанную страницу
   function goToPage(page) {
-    if (page < 1 || page > totalPages) return;
-    currentPage = page;
-    showPage(currentPage);
-    renderPagination();
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      showPage(currentPage);
+      renderPagination();
   }
 
   // Инициализация
   showPage(currentPage);
   renderPagination();
-
 });
+
+
+/* Страница поиска */
 
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем элементы по их идентификаторам
@@ -538,6 +540,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+/* Страница продукта переключение изоражений */
 
 document.addEventListener('DOMContentLoaded', function () {
   const mainImage = document.querySelector(".productPage-hero__content-images__img img");
@@ -587,17 +592,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* Прохожждение теста */
+
 document.addEventListener("DOMContentLoaded", () => {
   let currentQuestionIndex = 0;
   const questionsCount = document.querySelectorAll('.pageTest-test__content-questions__question').length;
 
-  // Получаем все кнопки навигации
   const prevButtons = document.querySelectorAll('.prev-button');
   const nextButtons = document.querySelectorAll('.next-button');
   const finishButton = document.querySelector('.finish-button');
   const restartButton = document.querySelector('.restart-button');
 
-  // Функция для отображения кнопок шагов
   function renderSteps() {
       const stepsContainer = document.getElementById('pageTest-steps');
       for (let i = 0; i < questionsCount; i++) {
@@ -609,16 +614,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
 
-  // Функция для обновления состояния кнопок шагов
   function updateStepButtons() {
       const stepButtons = document.querySelectorAll('.step-button');
       stepButtons.forEach((button, index) => {
           button.classList.toggle('completed', index < currentQuestionIndex);
           button.classList.toggle('active', index === currentQuestionIndex);
+          button.classList.toggle('current', index === currentQuestionIndex); // Добавляем класс current
       });
   }
 
-  // Функция для обновления видимости вопросов
   function updateQuestionVisibility() {
       const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach((question, index) => {
@@ -629,25 +633,21 @@ document.addEventListener("DOMContentLoaded", () => {
       updateQuestionCount();
       updateContainerHeight();
       markCompleted();
+      updateStepButtons(); // Обновляем состояние кнопок шагов
   }
 
-  // Функция для обновления высоты контейнера
   function updateContainerHeight() {
       const activeQuestion = document.querySelector('.pageTest-test__content-questions__question.active');
       const resultBlock = document.getElementById('result');
       const container = document.getElementById('question-container');
-
-      // Подстраиваем высоту под активный вопрос или результат
       container.style.height = activeQuestion ? `${activeQuestion.offsetHeight}px` : `${resultBlock.offsetHeight}px`;
   }
 
-  // Функция для обновления счетчика вопросов
   function updateQuestionCount() {
       const questionCountElement = document.querySelector('.pageTest-test__content-questions__question.active .question-count');
       questionCountElement.textContent = `Вопрос ${currentQuestionIndex + 1} из ${questionsCount}`;
   }
 
-  // Функция для перехода к следующему вопросу
   function nextQuestion() {
       if (currentQuestionIndex < questionsCount - 1) {
           currentQuestionIndex++;
@@ -657,7 +657,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
 
-  // Функция для перехода к предыдущему вопросу
   function prevQuestion() {
       if (currentQuestionIndex > 0) {
           currentQuestionIndex--;
@@ -665,37 +664,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
 
-  // Функция для отображения результата
   function showResult() {
       const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach(q => q.classList.remove('active'));
       document.getElementById('result').style.display = 'block';
-      updateContainerHeight(); // Подстраиваем высоту контейнера под высоту блока результата
+      updateContainerHeight();
   }
 
-  // Функция для перезапуска теста
   function restartTest() {
       currentQuestionIndex = 0;
-      updateStepButtons(); // обновляем кнопки шагов
+      updateStepButtons();
       updateQuestionVisibility();
       document.getElementById('result').style.display = 'none';
 
-      // Сбросить состояние всех вопросов
       const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach(q => {
           const radios = q.querySelectorAll('input[type="radio"]');
           radios.forEach(radio => {
-              radio.checked = false; // Сброс состояния выбора
+              radio.checked = false;
           });
       });
 
       document.querySelectorAll('.step-button').forEach(button => button.classList.remove('completed'));
 
-      // Обновляем высоту контейнера
       updateContainerHeight();
   }
 
-  // Функция для отметки завершенного вопроса
   function markCompleted() {
       const stepButtons = document.querySelectorAll('.step-button');
       stepButtons.forEach((button, index) => {
@@ -707,34 +701,33 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Функция для перехода к выбранному вопросу
   function goToQuestion(index) {
       currentQuestionIndex = index;
       updateQuestionVisibility();
   }
 
-  // Привязываем функции к кнопкам
   prevButtons.forEach(button => button.onclick = prevQuestion);
   nextButtons.forEach(button => {
       button.onclick = () => {
           if (currentQuestionIndex === questionsCount - 1) {
-              showResult(); // Показываем результат на последнем вопросе
+              showResult();
           } else {
               nextQuestion();
           }
       };
   });
 
-  // Привязываем действия к кнопкам завершения и перезапуска
   finishButton.onclick = showResult;
   restartButton.onclick = restartTest;
 
-  // Запуск
   renderSteps();
   updateQuestionVisibility();
   updateContainerHeight();
 });
 
+
+
+/* Карта таро */
 
 document.addEventListener('DOMContentLoaded', () => {
   const cardCount = 15;
@@ -828,42 +821,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* Карта таро - перемещение изображения при листании */
 
 document.addEventListener("scroll", function () {
-// Выбираем элементы
-const imgContainer = document.getElementById('pageCardDay-hero__content-img');
-const heroContent = document.getElementById('pageCardDay-hero__content');
+  // Выбираем элементы
+  const imgContainer = document.getElementById('pageCardDay-hero__content-img');
+  const heroContent = document.getElementById('pageCardDay-hero__content');
 
-// Получаем начальное значение top из CSS
-const computedStyle = window.getComputedStyle(imgContainer);
-const initialTop = parseInt(computedStyle.top, 10); // Преобразуем значение top в число
+  // Проверяем, существуют ли оба элемента на странице
+  if (imgContainer && heroContent) {
+    // Получаем начальное значение top из CSS
+    const computedStyle = window.getComputedStyle(imgContainer);
+    const initialTop = parseInt(computedStyle.top, 10); // Преобразуем значение top в число
 
-// Функция для управления положением изображения
-function handleScroll() {
-    if (window.innerWidth >= 1024) { // Условие для экранов шириной 1024px и больше
+    // Функция для управления положением изображения
+    function handleScroll() {
+      if (window.innerWidth >= 1024) { // Условие для экранов шириной 1024px и больше
         const heroContentRect = heroContent.getBoundingClientRect();
         const imgContainerHeight = imgContainer.clientHeight;
 
         // Проверяем, если блок находится в зоне фиксации
         if (heroContentRect.top <= initialTop && heroContentRect.bottom > imgContainerHeight + initialTop) {
-            imgContainer.classList.add('fixed'); // Добавляем класс фиксации
+          imgContainer.classList.add('fixed'); // Добавляем класс фиксации
         }
         // Если блок выходит из зоны фиксации (прокручиваем вверх)
         else {
-            imgContainer.classList.remove('fixed'); // Убираем класс фиксации
+          imgContainer.classList.remove('fixed'); // Убираем класс фиксации
         }
-    } else {
+      } else {
         imgContainer.classList.remove('fixed'); // Убираем класс для экранов меньше 1024px
+      }
     }
-}
 
-// Добавляем обработчик событий
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', handleScroll); // Перепроверка при изменении размера окна
-
-
-
+    // Добавляем обработчик событий
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Перепроверка при изменении размера окна
+  }
 });
+
+/* Карта таро - листание блока */
 
 document.addEventListener("DOMContentLoaded", function () {
   const cardList = document.querySelector(".pageCardDay-hero__content-scroll__list");
@@ -951,7 +947,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+/* Блог - открытие категории в мобильной версии */
 
 document.addEventListener('DOMContentLoaded', function() {
   const categoriesBlock = document.getElementById('blogs-categories-block');
@@ -996,19 +992,18 @@ document.addEventListener('DOMContentLoaded', function() {
   setInitialHeight();
 });
 
+/* Блог - комментарии */
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Функция для правильного склонения слова "ответ"
   const getDeclension = (number, singular, few, many) => {
     const mod10 = number % 10;
     const mod100 = number % 100;
-
     if (mod100 >= 11 && mod100 <= 14) return many;
     if (mod10 === 1) return singular;
     if (mod10 >= 2 && mod10 <= 4) return few;
     return many;
   };
 
-  // Функция для установки начальных значений высоты и текста кнопок
   const initializeBlocks = () => {
     document.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block').forEach(block => {
       const topBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-top');
@@ -1016,11 +1011,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const answersButton = block.querySelector('.pageBlog-comments-answers');
 
       if (topBlock && answersButton) {
-        // Устанавливаем высоту блока равной высоте topBlock
-        block.style.height = `${topBlock.offsetHeight}px`;
+        block.style.height = `${topBlock.getBoundingClientRect().height}px`;
 
         if (bottomBlock) {
-          // Устанавливаем текст кнопки с количеством ответов и правильным склонением
           const replyCount = bottomBlock.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block-top').length;
           const replyText = getDeclension(replyCount, 'ответ', 'ответа', 'ответов');
           answersButton.textContent = `Показать ${replyCount} ${replyText}`;
@@ -1029,7 +1022,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Обработчик кликов для кнопки "Показать ответы"
+  const updateBlockHeight = (block, delay = 0) => {
+    setTimeout(() => {
+      const topBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-top');
+      const bottomBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-bottom');
+      const respondInput = topBlock.querySelector('.pageBlogs-comments-respond');
+
+      // Определяем текущие высоты
+      const topHeight = topBlock ? topBlock.getBoundingClientRect().height : 0;
+      const bottomHeight = bottomBlock && block.classList.contains('expanded')
+        ? bottomBlock.getBoundingClientRect().height
+        : 0;
+      const respondHeight = respondInput && respondInput.classList.contains('visible')
+        ? respondInput.scrollHeight
+        : 0;
+
+      // Устанавливаем итоговую высоту
+      block.style.height = `${topHeight + bottomHeight + respondHeight}px`;
+    }, delay);
+  };
+
   document.querySelectorAll('.pageBlog-comments-answers').forEach(button => {
     button.addEventListener('click', () => {
       const block = button.closest('.blogs-hero__content-info__comments-bloсks__block');
@@ -1038,37 +1050,166 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!bottomBlock) return;
 
-      // Если блок развернут, сворачиваем его и меняем текст кнопки
       if (block.classList.contains('expanded')) {
-        block.style.height = `${topBlock.offsetHeight}px`;
+        block.classList.remove('expanded');
+        updateBlockHeight(block);
         const replyCount = bottomBlock.querySelectorAll('.blogs-hero__content-info__comments-bloсks__block-top').length;
         const replyText = getDeclension(replyCount, 'ответ', 'ответа', 'ответов');
         button.textContent = `Показать ${replyCount} ${replyText}`;
-        block.classList.remove('expanded');
       } else {
-        // Разворачиваем блок и меняем текст кнопки на "Скрыть ответы"
-        block.style.height = `${topBlock.offsetHeight + bottomBlock.offsetHeight}px`;
-        button.textContent = "Скрыть ответы";
         block.classList.add('expanded');
+        updateBlockHeight(block, 100); // Задержка в 100 мс для корректного пересчета высоты
+        button.textContent = "Скрыть ответы";
       }
     });
   });
 
-  // Обработчик для кнопки "Ответить", чтобы показать скрытое поле ответа
   document.querySelectorAll('.pageBlog-comments-respond').forEach(button => {
     button.addEventListener('click', () => {
-      const respondInput = button.closest('.blogs-hero__content-info__comments-bloсks__block-top')
-                                  .querySelector('.pageBlogs-comments-respond');
+      const topBlock = button.closest('.blogs-hero__content-info__comments-bloсks__block-top');
+      const block = button.closest('.blogs-hero__content-info__comments-bloсks__block');
+      const respondInput = topBlock.querySelector('.pageBlogs-comments-respond');
 
       if (respondInput) {
         respondInput.classList.toggle('visible');
+
+        // Даем браузеру отрисовать изменение класса перед пересчетом высоты
+        updateBlockHeight(block, 100); // Устанавливаем задержку в 100 мс для точного пересчета
       }
     });
   });
 
-  // Вызов функции инициализации блоков при загрузке страницы
   initializeBlocks();
 });
+
+
+/* Курсы - открытие категории в мобильной версии */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const categoriesBlock = document.getElementById('courses-categories-block');
+  const toggleButton = document.getElementById('courses-categories-title');
+  const contentBlock = categoriesBlock.querySelector('.courses-hero__content-left__block-choice');
+  let isExpanded = false;
+
+  function setInitialHeight() {
+    if (window.innerWidth <= 768) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+    } else {
+      categoriesBlock.style.height = '';
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  }
+
+  function toggleBlock() {
+    if (window.innerWidth <= 768) {
+      if (isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+        categoriesBlock.classList.remove('active');
+      } else {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+        categoriesBlock.classList.add('active');
+      }
+      isExpanded = !isExpanded;
+    }
+  }
+
+  toggleButton.addEventListener('click', toggleBlock);
+
+  document.addEventListener('click', function(event) {
+    if (isExpanded && !categoriesBlock.contains(event.target)) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  });
+
+  window.addEventListener('resize', setInitialHeight);
+  setInitialHeight();
+});
+
+
+/* Магазин - сброс фильра */
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to clear category checkboxes
+  const clearCategories = () => {
+    const checkboxes = document.querySelectorAll(".shops-hero__content-left__block-categories input[type='checkbox']");
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  };
+
+  // Function to clear price input fields
+  const clearPrice = () => {
+    const priceFrom = document.getElementById("categories-price-from");
+    const priceBefore = document.getElementById("categories-price-before");
+
+    if (priceFrom) priceFrom.value = "";
+    if (priceBefore) priceBefore.value = "";
+  };
+
+  // Event listener for "Сбросить" button in categories
+  const categoriesResetButton = document.getElementById("shops-btn-clean-categories");
+  if (categoriesResetButton) {
+    categoriesResetButton.addEventListener("click", clearCategories);
+  }
+
+  // Event listener for "Сбросить" button in price
+  const priceResetButton = document.getElementById("shops-btn-clean-price");
+  if (priceResetButton) {
+    priceResetButton.addEventListener("click", clearPrice);
+  }
+});
+
+/* Магазин - открытие фильтра в мобильной версии */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const categoriesBlock = document.getElementById('shops-categories-block');
+  const toggleButton = document.getElementById('shops-categories-title');
+  const contentBlock = categoriesBlock.querySelector('.shops-hero__content-left__block');
+  let isExpanded = false;
+
+  function setInitialHeight() {
+    if (window.innerWidth <= 768) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+    } else {
+      categoriesBlock.style.height = '';
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  }
+
+  function toggleBlock() {
+    if (window.innerWidth <= 768) {
+      if (isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+        categoriesBlock.classList.remove('active');
+      } else {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+        categoriesBlock.classList.add('active');
+      }
+      isExpanded = !isExpanded;
+    }
+  }
+
+  toggleButton.addEventListener('click', toggleBlock);
+
+  document.addEventListener('click', function(event) {
+    if (isExpanded && !categoriesBlock.contains(event.target)) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      categoriesBlock.classList.remove('active');
+      isExpanded = false;
+    }
+  });
+
+  window.addEventListener('resize', setInitialHeight);
+  setInitialHeight();
+});
+
+
+
+
 
 
 
