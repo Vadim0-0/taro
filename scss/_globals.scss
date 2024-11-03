@@ -531,15 +531,42 @@ button {
   }
 
   .pop-up-search {
+    top: 75px;
+
+    & .container {
+      transform: translateY(-500px);
+      background-color: var(--seryy);
+      transition: all 0.5s ease;
+    }
+
+    &.active {
+      & .container {
+        transform: translateY(0);
+      }
+    }
 
     &__content {
       max-width: 100%;
       margin-left: 0;
-      padding: 20px;
+      padding: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: auto;
+      transform: translateX(0);
+
+      &-top {
+        display: none;
+      }
+
+      &-nav {
+        display: none;
+      }
 
       &-search {
+        height: 100%;
 
         &__label {
+          margin-bottom: 0;
 
           &-btns {
 
@@ -551,6 +578,15 @@ button {
               width: 100px;
             }
           }
+        }
+      }
+
+      &-pages {
+        display: none;
+        margin-top: 10px;
+
+        &.visible {
+          display: block;
         }
       }
     }
