@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Блог</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <nav class="header__content-nav">
+          <a href="#" class="header__content-nav__logo">
+            <img src="./img/hedaer/Logo.svg" alt="logo">
+          </a>
+          <span class="header__content-nav__line"></span>
+          <ul class="header__content-nav__list">
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Обо мне
+              </a>
+            </li>
+            <li class="header__content-nav__list-item courses" id="header-courses-block">
+              <button class="header__content-nav__list-item__link" id="header-courses-open">
+                Курсы
+
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 1.5L8 8.5L1 1.5" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <ul class="courses-menu" id="courses-menu">
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 1
+                  </a>
+                </li>
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 2
+                  </a>
+                </li>
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 3
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Магазин
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Тесты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Блог
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Карта дня
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Отзывы
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Контакты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__content-links">
+          <div class="header__content-links__search">
+            <button class="btn-global header-search-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="" stroke-width="1.5" stroke-linecap="square" />
+              </svg>
+            </button>
+            <a href="#"  class="btn-global header__content-links__search-btn" id="header-menu-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.5C3 3.87479 3.02811 3 6.5 3C9.97189 3 10 3.87479 10 6.5C10 9.12521 10.0111 10 6.5 10C2.98893 10 3 9.12521 3 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M14 6.5C14 3.87479 14.0281 3 17.5 3C20.9719 3 21 3.87479 21 6.5C21 9.12521 21.0111 10 17.5 10C13.9889 10 14 9.12521 14 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17.5C3 14.8748 3.02811 14 6.5 14C9.97189 14 10 14.8748 10 17.5C10 20.1252 10.0111 21 6.5 21C2.98893 21 3 20.1252 3 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 17.5C14 14.8748 14.0281 14 17.5 14C20.9719 14 21 14.8748 21 17.5C21 20.1252 21.0111 21 17.5 21C13.9889 21 14 20.1252 14 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <a href="mail:info@kasarina.ru" class="header__content-links__email">
+            info@kasarina.ru
+          </a>
+          <ul class="header__content-links__list">
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M19.7432 4.18663C20.4262 3.90739 21.1404 4.51356 20.976 5.2326L17.806 19.1093C17.6318 19.8731 16.6841 20.1456 16.1305 19.5919L10.8511 14.3135" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12.5131 15.9616L10.1876 17.9475C9.77411 18.2997 9.13291 18.0788 9.02491 17.5466L8.13859 13.1857L3.8418 12.6408C2.86006 12.5163 2.68297 11.1697 3.59856 10.7951L19.7433 4.1875" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8.13867 13.1822L15.4293 8.27344" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16.6455 7.99553C16.6455 10.2017 14.857 11.9911 12.6499 11.9911C10.4437 11.9911 8.65527 10.2017 8.65527 7.99553C8.65527 5.78934 10.4437 4 12.6499 4C14.857 4 16.6455 5.78934 16.6455 7.99553Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.65 14.875C9.27454 14.875 6.39551 15.3853 6.39551 17.428C6.39551 19.4707 9.2581 19.9991 12.65 19.9991C16.0237 19.9991 18.9045 19.4872 18.9045 17.4461C18.9045 15.4034 16.0427 14.875 12.65 14.875Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header__content-mobile">
+        <nav class="header__content-nav">
+          <a href="#" class="header__content-nav__logo">
+            <img src="./img/hedaer/Logo.svg" alt="logo">
+          </a>
+          <span class="header__content-nav__line"></span>
+          <ul class="header__content-nav__list">
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Обо мне
+              </a>
+            </li>
+            <li class="header__content-nav__list-item resize" id="header-courses-courses">
+              <button class="header__content-nav__list-item__link" id="header-courses-btn">
+                Курсы
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 1.5L8 8.5L1 1.5" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <ul class="header-courses-list">
+                <li class="header-courses-list__item">
+                  <a href="#">
+                    Курс 1
+                  </a>
+                </li>
+                <li class="header-courses-list__item">
+                  <a href="#">
+                    Курс 2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Магазин
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Тесты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Блог
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Карта дня
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Отзывы
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Контакты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="mail:info@kasarina.ru" class="btn-global header__content-nav__list-item__link">
+                info@kasarina.ru
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__content-links">
+          <div class="header__content-links__search">
+            <button class="btn-global header-search-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="" stroke-width="1.5" stroke-linecap="square" />
+              </svg>
+            </button>
+            <button class="btn-global header__content-links__search-btn" id="header-menu-close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M6.5 6L18.5 18" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18.5 6L6.5 18" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <a href="mail:info@kasarina.ru" class="header__content-links__email">
+            info@kasarina.ru
+          </a>
+          <ul class="header__content-links__list">
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M19.7432 4.18663C20.4262 3.90739 21.1404 4.51356 20.976 5.2326L17.806 19.1093C17.6318 19.8731 16.6841 20.1456 16.1305 19.5919L10.8511 14.3135" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12.5131 15.9616L10.1876 17.9475C9.77411 18.2997 9.13291 18.0788 9.02491 17.5466L8.13859 13.1857L3.8418 12.6408C2.86006 12.5163 2.68297 11.1697 3.59856 10.7951L19.7433 4.1875" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8.13867 13.1822L15.4293 8.27344" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16.6455 7.99553C16.6455 10.2017 14.857 11.9911 12.6499 11.9911C10.4437 11.9911 8.65527 10.2017 8.65527 7.99553C8.65527 5.78934 10.4437 4 12.6499 4C14.857 4 16.6455 5.78934 16.6455 7.99553Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.65 14.875C9.27454 14.875 6.39551 15.3853 6.39551 17.428C6.39551 19.4707 9.2581 19.9991 12.65 19.9991C16.0237 19.9991 18.9045 19.4872 18.9045 17.4461C18.9045 15.4034 16.0427 14.875 12.65 14.875Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <section class="page-header blogs-header">
+        <div class="page-header__content">
+          <div class="page-header__content-links">
+            <a href="#">
+              Главная
+            </a>
+            <span>
+              <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M13.4585 5.77148L0.958496 5.77148" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.41699 0.751158L13.4587 5.77116L8.41699 10.792" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <a href="#" class="">
+              Блог
+            </a>
+            <span>
+              <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M13.4585 5.77148L0.958496 5.77148" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.41699 0.751158L13.4587 5.77116L8.41699 10.792" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <a href="#" class="active">
+              Название статьи
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="blogs-hero pageBlog-hero">
+        <div class="blogs-hero__content">
+
+          <div class="blogs-hero__content-header">
+            <h2>
+              Lorem ipsum dolor sit amet consecteturornare
+            </h2>
+            <p>
+              01.02.2024
+            </p>
+          </div>
+
+          <div class="blogs-hero__content-left">
+            <div class="blogs-hero__content-left__block" id="blogs-categories-block">
+              <h2 id="blogs-categories-title">
+                Содержание
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 8.5L12 15.5L5 8.5" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </h2>
+              <div class="blogs-hero__content-left__block-choice">
+                <a href="#">
+                  Пункт 1
+                </a>
+                <a href="#">
+                  Пункт 2
+                </a>
+                <a href="#">
+                  Пункт 3
+                </a>
+                <a href="#">
+                  Пункт 4
+                </a>
+                <a href="#">
+                  Пункт 5
+                </a>
+                <a href="#">
+                  Пункт 6
+                </a>
+              </div>
+            </div>
+            <div class="blogs-hero__content-left__block">
+              <h2>
+                Популярные статьи
+              </h2>
+              <div class="blogs-hero__content-left__block-links">
+                <a href="#">
+                  <div class="link-img">
+                    <img src="./img/blogs/link-img.png" alt="img">
+                  </div>
+                  Тема статьи
+                </a>
+                <a href="#">
+                  <div class="link-img">
+                    <img src="./img/blogs/link-img.png" alt="img">
+                  </div>
+                  Тема статьи
+                </a>
+                <a href="#">
+                  <div class="link-img">
+                    <img src="./img/blogs/link-img.png" alt="img">
+                  </div>
+                  Тема статьи
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blogs-hero__content-info">
+            <div class="blogs-hero__content-info__article">
+              <h2 class="section-title">
+                Lorem ipsum dolor sit amet consecteturornare
+              </h2>
+              <p class="data">
+                01.02.2024
+              </p>
+              <picture class="blogs-hero__content-info__article-images">
+                <source srcset="./img/index/hero/img-desctop.svg" media="(min-width: 769px)" />
+                <source srcset="./img/index/hero/hero-table.svg" media="(min-width: 451px)" />
+                <img src="./img/index/hero/hero-mobile.svg" alt="MDN" />
+              </picture>
+              <h3>
+                Заголовок 3
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <h4>
+                Заголовок 4
+              </h4>
+              <p class="subitem">
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <div class="blogs-hero__content-info__article-banner">
+                <img src="" alt="img">
+              </div>
+              <h3>
+                Заголовок 3
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <ul class="blogs-hero__content-info__article-list">
+                <li class="product-card">
+                  <div class="product-card__img">
+                    <img src="./img/index/store/store-img1.svg" alt="img">
+                  </div>
+                  <article class="product-card__article">
+                    <h3>
+                      Набор для Девы
+                    </h3>
+                    <p>
+                      7 000 р.
+                    </p>
+                    <a href="#" class="btn-global product-card__article-btn">
+                      Купить
+                    </a>
+                  </article>
+                </li>
+                <li class="product-card">
+                  <div class="product-card__img">
+                    <img src="./img/index/store/store-img2.svg" alt="img">
+                  </div>
+                  <article class="product-card__article">
+                    <h3>
+                      Пирит и Халькопирит в кварце
+                    </h3>
+                    <p>
+                      1 200 р.
+                    </p>
+                    <a href="#" class="btn-global product-card__article-btn">
+                      Купить
+                    </a>
+                  </article>
+                </li>
+              </ul>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+              </p>
+              <div class="blogs-hero__content-info__article-bottom">
+                <div class="blogs-hero__content-info__article-bottom__left">
+                  <a href="#">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M20.7075 19.8103C18.8122 22.0513 16.1517 23.163 13.4943 23.154C12.5639 23.1509 8.41753 23.1529 5.96986 23.154C5.24214 23.155 4.81241 22.3442 5.21681 21.7391C5.44283 21.4005 5.7327 20.988 5.96175 20.6657C6.1898 20.3434 6.21007 19.9208 6.01243 19.5782C5.66479 18.9752 5.14687 18.059 5.01309 17.7255C3.40665 14.2522 4.02591 10.0055 6.89319 7.13921C10.8155 3.21686 17.3639 3.49761 20.9092 7.98246C23.6326 11.4265 23.5434 16.4576 20.7075 19.8103Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M17.7044 14.0538V14.1265M17.999 14.0694C17.999 14.2331 17.8662 14.3658 17.7025 14.3658C17.5389 14.3658 17.4062 14.2331 17.4062 14.0694C17.4062 13.9058 17.5389 13.7731 17.7025 13.7731C17.8662 13.7731 17.999 13.9058 17.999 14.0694Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M13.5285 14.0538V14.1265M13.8232 14.0694C13.8232 14.2331 13.6904 14.3658 13.5267 14.3658C13.3631 14.3658 13.2305 14.2331 13.2305 14.0694C13.2305 13.9058 13.3631 13.7731 13.5267 13.7731C13.6904 13.7731 13.8232 13.9058 13.8232 14.0694Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.35668 14.0538V14.1265M9.65132 14.0694C9.65132 14.2331 9.51853 14.3658 9.35486 14.3658C9.1912 14.3658 9.05859 14.2331 9.05859 14.0694C9.05859 13.9058 9.1912 13.7731 9.35486 13.7731C9.51853 13.7731 9.65132 13.9058 9.65132 14.0694Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>
+                      14
+                    </p>
+                  </a>
+                  <a href="#">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.8133 15.0479V18.8619C13.8133 19.6821 14.781 20.1164 15.3887 19.5665C17.4561 17.6982 21.0061 14.4897 22.5856 13.0619C23.0096 12.6791 22.9941 12.0126 22.5578 11.6434L15.3721 5.55648C14.7584 5.03549 13.8164 5.47086 13.8154 6.27555C13.8143 7.70854 13.8133 9.37263 13.8133 9.37263" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path opacity="0.4" d="M13.8164 15.0497C9.46276 15.0497 6.09234 16.5559 4.22807 20.6733C4.22807 20.6733 2.61662 9.37451 13.8164 9.37451" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <a href="#">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>
+                      15
+                    </p>
+                  </a>
+                </div>
+                <div class="blogs-hero__content-info__article-bottom__right">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7">
+                        <path opacity="0.4" d="M12.498 20.0712C16.203 20.0712 19.592 17.4072 21.5 12.9682C19.592 8.52923 16.203 5.86523 12.498 5.86523C8.797 5.86523 5.408 8.52923 3.5 12.9682C5.408 17.4092 8.797 20.0712 12.502 20.0712H12.498Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5788 12.9735C15.5788 14.6715 14.2008 16.0495 12.5028 16.0495C10.8038 16.0495 9.42578 14.6715 9.42578 12.9735C9.42578 11.2745 10.8038 9.89648 12.5028 9.89648C14.2008 9.89648 15.5788 11.2745 15.5788 12.9735Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                    </svg>
+                    <p>
+                      111 111
+                    </p>
+                    <p>
+                      просмотров
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blogs-hero__content-info__comments">
+              <h2>
+                Комментарии <span>14</span>
+              </h2>
+              <label for="pageBlogs-comments-input">
+                <input type="text" name="pageBlogs-comments-input" id="pageBlogs-comments-input" placeholder="Оставить комментарий...">
+                <button>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </label>
+              <div class="blogs-hero__content-info__comments-bloсks">
+                <div class="blogs-hero__content-info__comments-bloсks__block">
+                  <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                        <img src="#" alt="logo">
+                      </div>
+                      <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                        <h3>
+                          Ивана Иванова
+                        </h3>
+                        <p class="time">
+                          15:00
+                        </p>
+                      </article>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                    </p>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                      <button class="pageBlog-comments-answers">
+                        Показать 3 ответа
+                      </button>
+                      <button class="pageBlog-comments-respond">
+                        Ответить
+                      </button>
+                      <button class="pageBlog-comments-favourites">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>
+                          15
+                        </p>
+                      </button>
+                    </div>
+                    <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                      <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                      <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </label>
+                  </div>
+                  <div class="blogs-hero__content-info__comments-bloсks__block-bottom">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="blogs-hero__content-info__comments-bloсks__block">
+                  <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                        <img src="#" alt="logo">
+                      </div>
+                      <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                        <h3>
+                          Ивана Иванова
+                        </h3>
+                        <p class="time">
+                          15:00
+                        </p>
+                      </article>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                    </p>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                      <button class="pageBlog-comments-answers">
+                        Показать 3 ответа
+                      </button>
+                      <button class="pageBlog-comments-respond">
+                        Ответить
+                      </button>
+                      <button class="pageBlog-comments-favourites">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>
+                          15
+                        </p>
+                      </button>
+                    </div>
+                    <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                      <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                      <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </label>
+                  </div>
+                  <div class="blogs-hero__content-info__comments-bloсks__block-bottom">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="blogs-hero__content-info__comments-bloсks__block">
+                  <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                        <img src="#" alt="logo">
+                      </div>
+                      <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                        <h3>
+                          Ивана Иванова
+                        </h3>
+                        <p class="time">
+                          15:00
+                        </p>
+                      </article>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                    </p>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                      <button class="pageBlog-comments-answers">
+                        Показать 3 ответа
+                      </button>
+                      <button class="pageBlog-comments-respond">
+                        Ответить
+                      </button>
+                      <button class="pageBlog-comments-favourites">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>
+                          15
+                        </p>
+                      </button>
+                    </div>
+                    <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                      <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                      <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </label>
+                  </div>
+                  <div class="blogs-hero__content-info__comments-bloсks__block-bottom">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="blogs-hero__content-info__comments-bloсks__block">
+                  <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                        <img src="#" alt="logo">
+                      </div>
+                      <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                        <h3>
+                          Ивана Иванова
+                        </h3>
+                        <p class="time">
+                          15:00
+                        </p>
+                      </article>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                    </p>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                      <button class="pageBlog-comments-answers">
+                        Показать 3 ответа
+                      </button>
+                      <button class="pageBlog-comments-respond">
+                        Ответить
+                      </button>
+                      <button class="pageBlog-comments-favourites">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>
+                          15
+                        </p>
+                      </button>
+                    </div>
+                    <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                      <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                      <button>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </label>
+                  </div>
+                  <div class="blogs-hero__content-info__comments-bloсks__block-bottom">
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                    <div class="blogs-hero__content-info__comments-bloсks__block-top">
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__header">
+                        <div class="blogs-hero__content-info__comments-bloсks__block-top__header-img">
+                          <img src="#" alt="logo">
+                        </div>
+                        <article class="blogs-hero__content-info__comments-bloсks__block-top__header-article">
+                          <h3>
+                            Ивана Иванова
+                          </h3>
+                          <p class="time">
+                            15:00
+                          </p>
+                        </article>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Diam cursus amet scelerisque arcu. Amet ac nibh eget turpis faucibus. Amet amet mattis cursus tortor leo adipiscing ornare. Nunc malesuada tempus blandit etiam dui id. Suspendisse nisl massa mauris dictum id. Lectus donec pretium at diam magna interdum eget mus. Vel est at mauris diam. A risus et consequat gravida. Curabitur vivamus pharetra venenatis rhoncus at. At sed justo congue risus varius.
+                      </p>
+                      <div class="blogs-hero__content-info__comments-bloсks__block-top__footer">
+                        <button class="pageBlog-comments-respond">
+                          Ответить
+                        </button>
+                        <button class="pageBlog-comments-favourites">
+                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.1421 4.66432C21.4794 5.78428 22.6665 9.59212 21.6448 12.9104C19.9713 18.2345 13.0037 21.6147 13.0037 21.6147C13.0037 21.6147 5.93007 18.1737 4.35383 12.9104C3.33218 9.59212 4.52896 5.79442 7.86632 4.66432C8.73034 4.38357 9.64592 4.31871 10.5382 4.47682C11.4304 4.63391 12.2749 5.27346 13.0037 5.83597C13.7296 5.26838 14.5751 4.62581 15.4683 4.4677C16.3615 4.3106 17.2781 4.3775 18.1421 4.66432Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <p>
+                            15
+                          </p>
+                        </button>
+                      </div>
+                      <label for="pageBlogs-comments-respond" class="pageBlogs-comments-respond">
+                        <input type="text" name="pageBlogs-comments-respond" placeholder="Оставить комментарий...">
+                        <button>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M11.7305 4.25L11.7305 19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.70491 10.2998L11.7289 4.2498L17.7539 10.2998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="blogs-hero__content-info__comments-link">
+                Поазать ещё
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="index-articles pageBlog-article">
+        <div class="index-articles__content">
+          <div class="index-articles__content-top">
+            <p class="section-name">
+              Статьи
+            </p>
+            <h2 class="section-title">
+              Читайте также
+            </h2>
+            <div class="off"></div>
+          </div>
+          <ul class="index-products-list index-articles__content-list">
+            <li class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <div class="product-card__img">
+                <img src="./img/index/products/products-img1.svg" alt="img">
+              </div>
+              <article class="product-card__article">
+                <h3>
+                  Тема статьи
+                </h3>
+                <p class="product-card__article-descr">
+                  Просто о сложном. <br>
+                  Вебинар поможет научиться читать натальную карту и усиливать данные от рождения способности, расти в духовной и материальной сферах, строить гармоничную Парность.
+                </p>
+                <div class="product-card__article-bottom">
+                  <p>
+                    01.02.2024
+                  </p>
+                  <div class="product-card__article-bottom__viewed">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7">
+                        <path opacity="0.4" d="M12.498 20.0712C16.203 20.0712 19.592 17.4072 21.5 12.9682C19.592 8.52923 16.203 5.86523 12.498 5.86523C8.797 5.86523 5.408 8.52923 3.5 12.9682C5.408 17.4092 8.797 20.0712 12.502 20.0712H12.498Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5788 12.9735C15.5788 14.6715 14.2008 16.0495 12.5028 16.0495C10.8038 16.0495 9.42578 14.6715 9.42578 12.9735C9.42578 11.2745 10.8038 9.89648 12.5028 9.89648C14.2008 9.89648 15.5788 11.2745 15.5788 12.9735Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                    </svg>
+                    <p>
+                      111 111
+                    </p>
+                  </div>
+                  <div class="product-card__article-bottom__favourites">
+                    <button>
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.8088 4.6642C21.1461 5.78416 22.3332 9.592 21.3115 12.9103C19.638 18.2344 12.6704 21.6146 12.6704 21.6146C12.6704 21.6146 5.59682 18.1736 4.02058 12.9103C2.99893 9.592 4.19571 5.79429 7.53307 4.6642C8.39709 4.38345 9.31267 4.31858 10.2049 4.4767C11.0971 4.63379 11.9416 5.27333 12.6704 5.83584C13.3963 5.26826 14.2418 4.62569 15.135 4.46757C16.0282 4.31048 16.9448 4.37738 17.8088 4.6642Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <p>
+                      15
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <div class="product-card__img">
+                <img src="./img/index/products/products-img2.svg" alt="img">
+              </div>
+              <article class="product-card__article">
+                <h3>
+                  Медитации на Стихи
+                </h3>
+                <p class="product-card__article-descr">
+                  Активация первых пяти чакр через взаимодействие с энергиями Огня, Воды, Земли, Воздуха и Эфира. Работа с чувством безопасности, желаниями, энергией, самооценкой и самореализацией.
+                </p>
+                <div class="product-card__article-bottom">
+                  <p>
+                    01.02.2024
+                  </p>
+                  <div class="product-card__article-bottom__viewed">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7">
+                        <path opacity="0.4" d="M12.498 20.0712C16.203 20.0712 19.592 17.4072 21.5 12.9682C19.592 8.52923 16.203 5.86523 12.498 5.86523C8.797 5.86523 5.408 8.52923 3.5 12.9682C5.408 17.4092 8.797 20.0712 12.502 20.0712H12.498Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5788 12.9735C15.5788 14.6715 14.2008 16.0495 12.5028 16.0495C10.8038 16.0495 9.42578 14.6715 9.42578 12.9735C9.42578 11.2745 10.8038 9.89648 12.5028 9.89648C14.2008 9.89648 15.5788 11.2745 15.5788 12.9735Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                    </svg>
+                    <p>
+                      111 111
+                    </p>
+                  </div>
+                  <div class="product-card__article-bottom__favourites">
+                    <button>
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.8088 4.6642C21.1461 5.78416 22.3332 9.592 21.3115 12.9103C19.638 18.2344 12.6704 21.6146 12.6704 21.6146C12.6704 21.6146 5.59682 18.1736 4.02058 12.9103C2.99893 9.592 4.19571 5.79429 7.53307 4.6642C8.39709 4.38345 9.31267 4.31858 10.2049 4.4767C11.0971 4.63379 11.9416 5.27333 12.6704 5.83584C13.3963 5.26826 14.2418 4.62569 15.135 4.46757C16.0282 4.31048 16.9448 4.37738 17.8088 4.6642Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <p>
+                      15
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <div class="product-card__img">
+                <img src="./img/index/products/products-img3.svg" alt="img">
+              </div>
+              <article class="product-card__article">
+                <h3>
+                  Марафон «Тревога»
+                </h3>
+                <p class="product-card__article-descr">
+                  Через телесные практики поможет обрести стабильность, избавиться от проблем со сном, постоянной высасывающей тревожности и принимать верные решения в спокойствии.
+                </p>
+                <div class="product-card__article-bottom">
+                  <p>
+                    01.02.2024
+                  </p>
+                  <div class="product-card__article-bottom__viewed">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7">
+                        <path opacity="0.4" d="M12.498 20.0712C16.203 20.0712 19.592 17.4072 21.5 12.9682C19.592 8.52923 16.203 5.86523 12.498 5.86523C8.797 5.86523 5.408 8.52923 3.5 12.9682C5.408 17.4092 8.797 20.0712 12.502 20.0712H12.498Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5788 12.9735C15.5788 14.6715 14.2008 16.0495 12.5028 16.0495C10.8038 16.0495 9.42578 14.6715 9.42578 12.9735C9.42578 11.2745 10.8038 9.89648 12.5028 9.89648C14.2008 9.89648 15.5788 11.2745 15.5788 12.9735Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                    </svg>
+                    <p>
+                      111 111
+                    </p>
+                  </div>
+                  <div class="product-card__article-bottom__favourites">
+                    <button>
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.8088 4.6642C21.1461 5.78416 22.3332 9.592 21.3115 12.9103C19.638 18.2344 12.6704 21.6146 12.6704 21.6146C12.6704 21.6146 5.59682 18.1736 4.02058 12.9103C2.99893 9.592 4.19571 5.79429 7.53307 4.6642C8.39709 4.38345 9.31267 4.31858 10.2049 4.4767C11.0971 4.63379 11.9416 5.27333 12.6704 5.83584C13.3963 5.26826 14.2418 4.62569 15.135 4.46757C16.0282 4.31048 16.9448 4.37738 17.8088 4.6642Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <p>
+                      15
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <a href="#" class="btn-global index-articles__content-btn">
+            Все товары
+          </a>
+        </div>
+      </section>
+
+      <section class="index-mailing pageBlog-mailing">
+        <div class="index-mailing__content">
+          <div class="index-mailing__content-info">
+            <h2 class="section-title">
+              Рассылки
+            </h2>
+            <p>
+              Первыми узнавайте о новых продуктах, эксклюзивных предложениях и самых лояльных условиях. В рассылках регулярно дарю подарки и даю уникальную информацию.
+            </p>
+            <form action="#" class="index-mailing__content-info__form">
+              <label for="pageBlog-mailing-email" class="index-mailing__content-info__form-label">
+                <input type="email" name="pageBlog-mailing-email" id="pageBlog-mailing-email" placeholder="Email" required>
+              </label>
+              <button class="btn-global index-mailing__content-info__form-btn">
+                Подписаться на рассылку
+              </button>
+            </form>
+          </div>
+          <div class="index-mailing__content-img">
+            <svg width="364" height="364" viewBox="0 0 364 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.4" d="M315.684 157.618V133.091C315.684 92.7752 288.767 59.9556 248.835 59.9556H119.918C80.0001 59.9556 53.0834 92.7752 53.0834 133.091V223.271C53.0834 263.616 80.0001 296.407 119.918 296.304H183.182" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M261.871 136.781L203.537 184.225C192.542 192.961 176.974 192.961 165.981 184.225L107.144 136.781" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M234.628 257.891C229.361 241.421 235.514 222.622 252.795 217.058C261.884 214.165 271.815 215.834 279.446 221.559C287.09 215.878 296.992 214.209 306.068 217.058C323.332 222.622 329.546 241.421 324.277 257.891C316.072 283.952 279.446 304.051 279.446 304.051C279.446 304.051 243.114 284.261 234.628 257.891Z" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__content-top">
+          <a href="#" class="footer__content-top__logo">
+            <img src="./img/footer/Logo.svg" alt="img">
+          </a>
+          <div class="footer__content-top__info">
+            <nav class="footer__content-top__info-nav">
+              <ul class="footer-list footer__content-top__info-nav__list">
+                <li class="footer__content-top__info-nav__list-item">
+                  <h3 class="footer-item-title">
+                    Информация
+                  </h3>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Обо мне
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Отзывы
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Сми о нас
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Контакты
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Отдел заботы
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Вакансии
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <ul class="footer-list footer__content-top__info-courses">
+              <li class="footer__content-top__info-courses__item">
+                <h3 class="footer-item-title">
+                  Курсы
+                </h3>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 1
+                </a>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 2
+                </a>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 3
+                </a>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 4
+                </a>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 5
+                </a>
+              </li>
+              <li class="footer__content-top__info-courses__item">
+                <a href="#" class="footer-item-link">
+                  Курс 6
+                </a>
+              </li>
+            </ul>
+            <div class="footer__content-top__info-right">
+              <div class="footer__content-top__info-right__top">
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Продукты
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Магазин
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Карта дня
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Карта дня
+                    </a>
+                  </li>
+                </ul>
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Соц. сети
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Вконтакте
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Telegram
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      YouTube
+                    </a>
+                  </li>
+                </ul>
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Контакты
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Задать вопрос
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      info@kasarina.ru
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Telegram
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <form action="#" class="footer__content-top__info-right__form">
+                <label for="footer-email" class="footer__content-top__info-right__form-label">
+                  <input type="email" id="footer-email" name="footer-email" placeholder="Email" required>
+                </label>
+                <button class="btn-global footer__content-top__info-right__form-btn">
+                  Подписаться на рассылку
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer__content-bottom">
+          <div class="footer__content-bottom__top">
+            <a href="#">
+              Политика конфиденциальности
+            </a>
+            <a href="#">
+              Публичная оферта
+            </a>
+            <a href="#">
+              Согласие на обработку персональных данных
+            </a>
+          </div>
+          <div class="footer__content-bottom__bottom">
+            <p>
+              © Копирайтинг  Юридический адрес: Московская область, г. Королев
+            </p>
+            <p>
+              ИП Касарина Наталья Геннадьевна, ИНН501820357691, ОГРНИП 318502900050444
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="pop-up-search">
+    <div class="container">
+      <div class="pop-up-search__content">
+        <div class="pop-up-search__content-top">
+          <h2 class="section-title">
+            Поиск
+          </h2>
+          <button id="pop-up-search-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="pop-up-search__content-nav">
+          <button class="active">
+            Везде
+          </button>
+          <button>
+            Курсы
+          </button>
+          <button>
+            Магазин
+          </button>
+          <button>
+            Тесты
+          </button>
+          <button>
+            Блог
+          </button>
+        </div>
+        <div class="pop-up-search__content-search">
+          <label for="pop-up-search-input" class="pop-up-search__content-search__label">
+            <input type="text" id="pop-up-search-input" placeholder="Найти">
+            <div class="pop-up-search__content-search__label-btns">
+              <button class="clear-btn" id="pop-up-search-clean-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button class="search-btn" id="pop-up-search-btn">
+                Искать
+              </button>
+            </div>
+          </label>
+        </div>
+        <div class="pop-up-search__content-pages">
+
+          <!-- Курсы -->
+          <ul class="pop-up-search__content-pages__list">
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 1
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 2
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 3
+              </p>
+            </a>
+          </li>
+          </ul>
+
+          <!-- Магазин -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Тесты -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Блог -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
