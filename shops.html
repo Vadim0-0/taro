@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Магазины</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <nav class="header__content-nav">
+          <a href="#" class="header__content-nav__logo">
+            <img src="./img/hedaer/Logo.svg" alt="logo">
+          </a>
+          <span class="header__content-nav__line"></span>
+          <ul class="header__content-nav__list">
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Обо мне
+              </a>
+            </li>
+            <li class="header__content-nav__list-item courses" id="header-courses-block">
+              <button class="header__content-nav__list-item__link" id="header-courses-open">
+                Курсы
+
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 1.5L8 8.5L1 1.5" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <ul class="courses-menu" id="courses-menu">
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 1
+                  </a>
+                </li>
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 2
+                  </a>
+                </li>
+                <li class="courses-menu__item">
+                  <a href="#">
+                    Курс 3
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Магазин
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Тесты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Блог
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Карта дня
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Отзывы
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Контакты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__content-links">
+          <div class="header__content-links__search">
+            <button class="btn-global header-search-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="" stroke-width="1.5" stroke-linecap="square" />
+              </svg>
+            </button>
+            <a href="#"  class="btn-global header__content-links__search-btn" id="header-menu-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.5C3 3.87479 3.02811 3 6.5 3C9.97189 3 10 3.87479 10 6.5C10 9.12521 10.0111 10 6.5 10C2.98893 10 3 9.12521 3 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M14 6.5C14 3.87479 14.0281 3 17.5 3C20.9719 3 21 3.87479 21 6.5C21 9.12521 21.0111 10 17.5 10C13.9889 10 14 9.12521 14 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17.5C3 14.8748 3.02811 14 6.5 14C9.97189 14 10 14.8748 10 17.5C10 20.1252 10.0111 21 6.5 21C2.98893 21 3 20.1252 3 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 17.5C14 14.8748 14.0281 14 17.5 14C20.9719 14 21 14.8748 21 17.5C21 20.1252 21.0111 21 17.5 21C13.9889 21 14 20.1252 14 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <a href="mail:info@kasarina.ru" class="header__content-links__email">
+            info@kasarina.ru
+          </a>
+          <ul class="header__content-links__list">
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M19.7432 4.18663C20.4262 3.90739 21.1404 4.51356 20.976 5.2326L17.806 19.1093C17.6318 19.8731 16.6841 20.1456 16.1305 19.5919L10.8511 14.3135" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12.5131 15.9616L10.1876 17.9475C9.77411 18.2997 9.13291 18.0788 9.02491 17.5466L8.13859 13.1857L3.8418 12.6408C2.86006 12.5163 2.68297 11.1697 3.59856 10.7951L19.7433 4.1875" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8.13867 13.1822L15.4293 8.27344" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16.6455 7.99553C16.6455 10.2017 14.857 11.9911 12.6499 11.9911C10.4437 11.9911 8.65527 10.2017 8.65527 7.99553C8.65527 5.78934 10.4437 4 12.6499 4C14.857 4 16.6455 5.78934 16.6455 7.99553Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.65 14.875C9.27454 14.875 6.39551 15.3853 6.39551 17.428C6.39551 19.4707 9.2581 19.9991 12.65 19.9991C16.0237 19.9991 18.9045 19.4872 18.9045 17.4461C18.9045 15.4034 16.0427 14.875 12.65 14.875Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header__content-mobile">
+        <nav class="header__content-nav">
+          <a href="#" class="header__content-nav__logo">
+            <img src="./img/hedaer/Logo.svg" alt="logo">
+          </a>
+          <span class="header__content-nav__line"></span>
+          <ul class="header__content-nav__list">
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Обо мне
+              </a>
+            </li>
+            <li class="header__content-nav__list-item resize" id="header-courses-courses">
+              <button class="header__content-nav__list-item__link" id="header-courses-btn">
+                Курсы
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 1.5L8 8.5L1 1.5" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <ul class="header-courses-list">
+                <li class="header-courses-list__item">
+                  <a href="#">
+                    Курс 1
+                  </a>
+                </li>
+                <li class="header-courses-list__item">
+                  <a href="#">
+                    Курс 2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Магазин
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Тесты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Блог
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Карта дня
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Отзывы
+              </a>
+            </li>
+            <li class="header__content-nav__list-item">
+              <a href="#" class="header__content-nav__list-item__link">
+                Контакты
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="#" class="btn-global header__content-nav__list-item__link">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-nav__list-item header__content-nav__list-item-mobile">
+              <a href="mail:info@kasarina.ru" class="btn-global header__content-nav__list-item__link">
+                info@kasarina.ru
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__content-links">
+          <div class="header__content-links__search">
+            <button class="btn-global header-search-open">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="" stroke-width="1.5" stroke-linecap="square" />
+              </svg>
+            </button>
+            <button class="btn-global header__content-links__search-btn" id="header-menu-close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M6.5 6L18.5 18" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18.5 6L6.5 18" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <a href="mail:info@kasarina.ru" class="header__content-links__email">
+            info@kasarina.ru
+          </a>
+          <ul class="header__content-links__list">
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                Задать вопрос
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M19.7432 4.18663C20.4262 3.90739 21.1404 4.51356 20.976 5.2326L17.806 19.1093C17.6318 19.8731 16.6841 20.1456 16.1305 19.5919L10.8511 14.3135" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12.5131 15.9616L10.1876 17.9475C9.77411 18.2997 9.13291 18.0788 9.02491 17.5466L8.13859 13.1857L3.8418 12.6408C2.86006 12.5163 2.68297 11.1697 3.59856 10.7951L19.7433 4.1875" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8.13867 13.1822L15.4293 8.27344" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__content-links__list-item">
+              <a href="#" class="btn-global">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16.6455 7.99553C16.6455 10.2017 14.857 11.9911 12.6499 11.9911C10.4437 11.9911 8.65527 10.2017 8.65527 7.99553C8.65527 5.78934 10.4437 4 12.6499 4C14.857 4 16.6455 5.78934 16.6455 7.99553Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.65 14.875C9.27454 14.875 6.39551 15.3853 6.39551 17.428C6.39551 19.4707 9.2581 19.9991 12.65 19.9991C16.0237 19.9991 18.9045 19.4872 18.9045 17.4461C18.9045 15.4034 16.0427 14.875 12.65 14.875Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <section class="page-header shops-header">
+        <div class="page-header__content">
+          <div class="page-header__content-links">
+            <a href="#">
+              Главная
+            </a>
+            <span>
+              <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M13.4585 5.77148L0.958496 5.77148" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.41699 0.751158L13.4587 5.77116L8.41699 10.792" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <a href="#" class="active">
+              Магазины
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="shops-hero">
+        <h1>
+          ЛАВКА
+          <span>Чаровницы</span>
+        </h1>
+        <div class="shops-hero__content">
+          <div class="shops-hero__content-left" id="shops-categories-block">
+            <h2 class="shops-hero__content-left__title-mobile" id="shops-categories-title">
+              Фильтры
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 8.5L12 15.5L5 8.5" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </h2>
+            <div class="shops-hero__content-left__block">
+              <div class="shops-hero__content-left__block-categories">
+                <div class="shops-hero__content-left__block-categories__top">
+                  <h2>
+                    Категории
+                  </h2>
+                  <button id="shops-btn-clean-categories">
+                    Сбросить
+                  </button>
+                </div>
+                <label for="categories-check-all" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-all">
+                  <span class="custom-checkbox"></span>
+                  Все
+                </label>
+                <label for="categories-check-new" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-new">
+                  <span class="custom-checkbox"></span>
+                  Новинки
+                </label>
+                <label for="categories-check-productWeek" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-productWeek">
+                  <span class="custom-checkbox"></span>
+                  Товар недели
+                </label>
+                <label for="categories-check-stonesMinerals" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-stonesMinerals">
+                  <span class="custom-checkbox"></span>
+                  Камни и минералы
+                </label>
+                <label for="categories-check-exclusive" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-exclusive">
+                  <span class="custom-checkbox"></span>
+                  Эксклюзив
+                </label>
+                <label for="categories-check-abundance" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-abundance">
+                  <span class="custom-checkbox"></span>
+                  Наборы изобилия
+                </label>
+                <label for="categories-check-collection" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-collection">
+                  <span class="custom-checkbox"></span>
+                  Личная коллекция
+                </label>
+                <label for="categories-check-boxes" class="shops-hero__content-left__block-categories__label">
+                  <input type="checkbox" name="categories-check" id="categories-check-boxes">
+                  <span class="custom-checkbox"></span>
+                  Шкатулки
+                </label>
+              </div>
+              <div class="shops-hero__content-left__block-price">
+                <div class="shops-hero__content-left__block-price__top">
+                  <h2>
+                    Цена
+                  </h2>
+                  <button id="shops-btn-clean-price">
+                    Сбросить
+                  </button>
+                </div>
+                <div class="shops-hero__content-left__block-price__info">
+                  <label for="categories-price-from" class="shops-hero__content-left__block-price__info-label">
+                    <input type="number" name="categories-price-from" id="categories-price-from" placeholder="1000">
+                  </label>
+                  <span class="shops-hero__content-left__block-price__info-line"></span>
+                  <label for="categories-price-before" class="shops-hero__content-left__block-price__info-label">
+                    <input type="number" name="categories-price-before" id="categories-price-before" placeholder="70 000">
+                  </label>
+                </div>
+              </div>
+              <div class="shops-hero__content-left__block-sort">
+                <div class="shops-hero__content-left__block-sort__top">
+                  <h2>
+                    Сортировать по
+                  </h2>
+                </div>
+                <div class="shops-hero__content-left__block-sort__info">
+                  <label for="categories-radio-popularity" class="shops-hero__content-left__block-sort__info-label">
+                    <input type="radio" name="categories-radio" id="categories-radio-popularity">
+                    <span class="custom-checkbox"></span>
+                    По популярности
+                  </label>
+                  <label for="categories-radio-ascending" class="shops-hero__content-left__block-sort__info-label">
+                    <input type="radio" name="categories-radio" id="categories-radio-ascending">
+                    <span class="custom-checkbox"></span>
+                    По возрастанию цены
+                  </label>
+                  <label for="categories-radio-descending" class="shops-hero__content-left__block-sort__info-label">
+                    <input type="radio" name="categories-radio" id="categories-radio-descending">
+                    <span class="custom-checkbox"></span>
+                    По убыванию цены
+                  </label>
+                  <label for="categories-radio-new" class="shops-hero__content-left__block-sort__info-label">
+                    <input type="radio" name="categories-radio" id="categories-radio-new">
+                    <span class="custom-checkbox"></span>
+                    По новинкам
+                  </label>
+                </div>
+              </div>
+              <div class="shops-hero__content-left__block-info">
+                <p>
+                  Нашли <span>450</span> товаров
+                </p>
+                <button class="btn-global">
+                  Показать
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="shops-hero__content-info">
+            <div class="shops-hero__content-info__blocks">
+              <div class="shops-hero__content-info__blocks-pages" id="cardContainer">
+
+                <!-- Страница 1 -->
+                <ul class="shops-hero__content-info__blocks-pages__cards active" id="page-1">
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img2.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Пирит и Халькопирит в кварце
+                      </h3>
+                      <p>
+                        1 200 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img3.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img4.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img2.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Пирит и Халькопирит в кварце
+                      </h3>
+                      <p>
+                        1 200 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img3.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img4.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                </ul>
+
+                <!-- Страница 2 -->
+                <ul class="shops-hero__content-info__blocks-pages__cards active" id="page-2">
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img2.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Пирит и Халькопирит в кварце
+                      </h3>
+                      <p>
+                        1 200 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img3.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img4.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                </ul>
+
+                <!-- Страница 3 -->
+                <ul class="shops-hero__content-info__blocks-pages__cards active" id="page-3">
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img1.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Набор для Девы
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img2.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Пирит и Халькопирит в кварце
+                      </h3>
+                      <p>
+                        1 200 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img3.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                  <li class="product-card">
+                    <div class="product-card__img">
+                      <img src="./img/index/store/store-img4.svg" alt="img">
+                    </div>
+                    <article class="product-card__article">
+                      <h3>
+                        Создание Нового Будущего
+                      </h3>
+                      <p>
+                        7 000 р.
+                      </p>
+                      <a href="#" class="btn-global product-card__article-btn">
+                        Купить
+                      </a>
+                    </article>
+                  </li>
+                </ul>
+
+              </div>
+
+              <div class="shops-hero__content-info__blocks-pagination" id="pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__content-top">
+          <a href="#" class="footer__content-top__logo">
+            <img src="./img/footer/Logo.svg" alt="img">
+          </a>
+          <div class="footer__content-top__info">
+            <nav class="footer__content-top__info-nav">
+              <ul class="footer-list footer__content-top__info-nav__list">
+                <li class="footer__content-top__info-nav__list-item">
+                  <h3 class="footer-item-title">
+                    Информация
+                  </h3>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Обо мне
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Отзывы
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Сми о нас
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Контакты
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Отдел заботы
+                  </a>
+                </li>
+                <li class="footer__content-top__info-nav__list-item">
+                  <a href="#" class="footer-item-link">
+                    Вакансии
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <ul class="footer-list footer__content-top__info-shops">
+              <li class="footer__content-top__info-shops__item">
+                <h3 class="footer-item-title">
+                  Курсы
+                </h3>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 1
+                </a>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 2
+                </a>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 3
+                </a>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 4
+                </a>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 5
+                </a>
+              </li>
+              <li class="footer__content-top__info-shops__item">
+                <a href="#" class="footer-item-link">
+                  Курс 6
+                </a>
+              </li>
+            </ul>
+            <div class="footer__content-top__info-right">
+              <div class="footer__content-top__info-right__top">
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Продукты
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Магазин
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Карта дня
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Карта дня
+                    </a>
+                  </li>
+                </ul>
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Соц. сети
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Вконтакте
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Telegram
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      YouTube
+                    </a>
+                  </li>
+                </ul>
+                <ul class="footer-list footer__content-top__info-right__top-list">
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <h3 class="footer-item-title">
+                      Контакты
+                    </h3>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Задать вопрос
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      info@kasarina.ru
+                    </a>
+                  </li>
+                  <li class="footer__content-top__info-right__top-list__item">
+                    <a href="#" class="footer-item-link">
+                      Telegram
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <form action="#" class="footer__content-top__info-right__form">
+                <label for="footer-email" class="footer__content-top__info-right__form-label">
+                  <input type="email" id="footer-email" name="footer-email" placeholder="Email" required>
+                </label>
+                <button class="btn-global footer__content-top__info-right__form-btn">
+                  Подписаться на рассылку
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer__content-bottom">
+          <div class="footer__content-bottom__top">
+            <a href="#">
+              Политика конфиденциальности
+            </a>
+            <a href="#">
+              Публичная оферта
+            </a>
+            <a href="#">
+              Согласие на обработку персональных данных
+            </a>
+          </div>
+          <div class="footer__content-bottom__bottom">
+            <p>
+              © Копирайтинг  Юридический адрес: Московская область, г. Королев
+            </p>
+            <p>
+              ИП Касарина Наталья Геннадьевна, ИНН501820357691, ОГРНИП 318502900050444
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="pop-up-search">
+    <div class="container">
+      <div class="pop-up-search__content">
+        <div class="pop-up-search__content-top">
+          <h2 class="section-title">
+            Поиск
+          </h2>
+          <button id="pop-up-search-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="pop-up-search__content-nav">
+          <button class="active">
+            Везде
+          </button>
+          <button>
+            Курсы
+          </button>
+          <button>
+            Магазин
+          </button>
+          <button>
+            Тесты
+          </button>
+          <button>
+            Блог
+          </button>
+        </div>
+        <div class="pop-up-search__content-search">
+          <label for="pop-up-search-input" class="pop-up-search__content-search__label">
+            <input type="text" id="pop-up-search-input" placeholder="Найти">
+            <div class="pop-up-search__content-search__label-btns">
+              <button class="clear-btn" id="pop-up-search-clean-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button class="search-btn" id="pop-up-search-btn">
+                Искать
+              </button>
+            </div>
+          </label>
+        </div>
+        <div class="pop-up-search__content-pages">
+
+          <!-- Курсы -->
+          <ul class="pop-up-search__content-pages__list">
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 1
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 2
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 3
+              </p>
+            </a>
+          </li>
+          </ul>
+
+          <!-- Магазин -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Тесты -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Блог -->
+          <ul class="pop-up-search__content-pages__list">
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 1
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 2
+                </p>
+              </a>
+            </li>
+            <li class="pop-up-search__content-pages__list-item">
+              <a href="#">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+                </svg>
+                <p>
+                  Курс 3
+                </p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
