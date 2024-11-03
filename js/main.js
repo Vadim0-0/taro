@@ -980,14 +980,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleButton.addEventListener('click', toggleBlock);
 
-  document.addEventListener('click', function(event) {
-    if (isExpanded && !categoriesBlock.contains(event.target)) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
-      categoriesBlock.classList.remove('active');
-      isExpanded = false;
-    }
-  });
-
   window.addEventListener('resize', setInitialHeight);
   setInitialHeight();
 });
@@ -1116,14 +1108,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleButton.addEventListener('click', toggleBlock);
 
-  document.addEventListener('click', function(event) {
-    if (isExpanded && !categoriesBlock.contains(event.target)) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
-      categoriesBlock.classList.remove('active');
-      isExpanded = false;
-    }
-  });
-
   window.addEventListener('resize', setInitialHeight);
   setInitialHeight();
 });
@@ -1194,14 +1178,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   toggleButton.addEventListener('click', toggleBlock);
-
-  document.addEventListener('click', function(event) {
-    if (isExpanded && !categoriesBlock.contains(event.target)) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
-      categoriesBlock.classList.remove('active');
-      isExpanded = false;
-    }
-  });
 
   window.addEventListener('resize', setInitialHeight);
   setInitialHeight();
