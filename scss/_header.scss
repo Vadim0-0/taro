@@ -224,6 +224,8 @@
     & .header__content {
       padding-bottom: 0;
       padding: 14px 0;
+      z-index: 1;
+      background-color: var(--seryy);
 
       &-nav {
         &__list {
