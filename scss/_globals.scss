@@ -23,6 +23,7 @@ body {
 
 img {
   max-width: 100%;
+  pointer-events: none;
 }
 
 a {
@@ -79,32 +80,6 @@ button {
   }
 }
 
-.btn-flipping {
-  @include flex-center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 100px;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.1);
-  background-color: var(--white);
-  @include transition;
-  z-index: 1;
-
-  &.prev {
-    left: 0;
-  }
-
-  &.next {
-    right: 0;
-  }
-
-  &:hover {
-    transform: translateY(-50%) scale(110%);
-  }
-}
-
 .section-name {
   padding-top: 12px;
   font-weight: 400;
@@ -134,8 +109,10 @@ button {
   opacity: 0.7;
 }
 
+
 .index-products-list {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .product-card {
@@ -148,6 +125,8 @@ button {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
   }
 
   &__img {
@@ -332,6 +311,7 @@ button {
   }
 }
 
+
 .pop-up-search {
   position: fixed;
   top: 67px;
@@ -359,7 +339,7 @@ button {
     flex-direction: column;
     margin-left: auto;
     padding: 30px;
-    height: 93vh;
+    height: 95vh;
     max-width: 590px;
     background-color: var(--seryy);
     transition: all 0.5s ease;
@@ -514,6 +494,7 @@ button {
     }
   }
 }
+
 
 .page-header {
   padding-top: 23px;
