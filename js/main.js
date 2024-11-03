@@ -149,6 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const openButtons = document.querySelectorAll(".header-search-open");
   const closeButton = document.getElementById("pop-up-search-close");
   const body = document.body;
+  const searchInput = document.getElementById("pop-up-search-input"); // Поле поиска
+  const searchContentPages = document.querySelector(".pop-up-search__content-pages");
+  const cleanButton = document.getElementById("pop-up-search-clean-btn"); // Кнопка очистки
 
   // Открытие pop-up при нажатии на любую кнопку с классом header-search-open
   openButtons.forEach(button => {
@@ -179,6 +182,42 @@ document.addEventListener("DOMContentLoaded", function () {
     popUpSearch.classList.remove("active");
     body.style.overflow = ''; // Разблокируем скролл
   });
+
+  // Проверяем, что searchInput и searchContentPages существуют
+  if (searchInput && searchContentPages) {
+    // Показ блока pop-up-search__content-pages при вводе текста в поле поиска для экранов < 768px
+    function toggleSearchContentPages() {
+      if (window.innerWidth < 768) {
+        // Показываем блок только если введён текст
+        if (searchInput.value.trim() !== "") {
+          searchContentPages.classList.add("visible");
+        } else {
+          searchContentPages.classList.remove("visible");
+        }
+      } else {
+        // Для экранов >= 768px блок всегда виден
+        searchContentPages.classList.add("visible");
+      }
+    }
+
+    // Обработчик для ввода текста
+    searchInput.addEventListener("input", toggleSearchContentPages);
+
+    // Обработчик для изменения размера окна
+    window.addEventListener("resize", toggleSearchContentPages);
+
+    // Устанавливаем видимость блока при загрузке страницы в зависимости от ширины экрана
+    toggleSearchContentPages();
+  }
+
+  // Проверяем, что кнопка очистки существует и добавляем обработчик для очистки поля поиска
+  if (cleanButton && searchInput) {
+    cleanButton.addEventListener("click", function () {
+      searchInput.value = ""; // Очищаем поле ввода
+      toggleSearchContentPages(); // Обновляем видимость блока `pop-up-search__content-pages`
+      searchInput.focus(); // Фокус на поле после очистки
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
