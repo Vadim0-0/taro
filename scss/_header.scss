@@ -129,12 +129,23 @@
     }
 
     &-links {
-      @include flex-center(11px);
+      @include flex-center(8px);
+      padding-left: 20px;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+      &__favorite {
+        border-radius: 10px;
+        margin-right: 10px;
+      }
 
       &__search {
-        padding: 0 20px;
+        padding: 0 19px;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
         border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+        & button {
+          border-radius: 10px;
+        }
 
         &-btn {
           display: none;
@@ -191,7 +202,7 @@
   }
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1280px) {
 
   .header {
 
@@ -234,6 +245,13 @@
       }
 
       &-links {
+        gap: 19px;
+        padding-left: 0;
+        border-left: none;
+
+        &__favorite {
+          display: none
+        }
 
         &__search {
           @include flex-center(10px);
