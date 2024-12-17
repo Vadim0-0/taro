@@ -128,6 +128,26 @@ activeBlock.addEventListener("touchend", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Находим элементы кнопок и блока
+  const headerMenuOpen = document.getElementById("pop-up-favorite-open");
+  const headerMenuClose = document.getElementById("pop-up-favorite-colse");
+  const headerContentMobile = document.querySelector(".pop-up-favorite");
+  const body = document.body;
+
+  // Добавляем класс при нажатии на кнопку открытия
+  headerMenuOpen.addEventListener("click", () => {
+    headerContentMobile.classList.add("active");
+    body.style.overflow = "hidden";
+  });
+
+  // Удаляем класс при нажатии на кнопку закрытия
+  headerMenuClose.addEventListener("click", () => {
+    headerContentMobile.classList.remove("active");
+    body.style.overflow = '';
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Находим элементы кнопок и блока
   const headerMenuOpen = document.getElementById("header-menu-open");
   const headerMenuClose = document.getElementById("header-menu-close");
   const headerContentMobile = document.querySelector(".header__content-mobile");
@@ -142,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     headerContentMobile.classList.remove("active");
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const popUpSearch = document.querySelector(".pop-up-search");
@@ -284,87 +305,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Index - листание блока */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const productLists = document.querySelectorAll('.index-products-list'); // Находим все элементы с этим классом
-  const maxScrollStep = 40; // Максимальная длина шага прокрутки
-
-  // Функция плавного скроллинга для одного элемента
-  function startSmoothScroll(container, targetScrollPosition) {
-    let isScrolling = false;
-    let animationFrameId;
-
-    function smoothScrollStep() {
-      const currentScrollPosition = container.scrollLeft;
-      const difference = targetScrollPosition - currentScrollPosition;
-
-      if (Math.abs(difference) > 1) {
-        const scrollStep = Math.sign(difference) * Math.min(maxScrollStep, Math.abs(difference));
-        container.scrollLeft += scrollStep;
-        animationFrameId = requestAnimationFrame(smoothScrollStep);
-      } else {
-        isScrolling = false;
-        container.scrollLeft = targetScrollPosition;
-        cancelAnimationFrame(animationFrameId);
-      }
-    }
-
-    if (!isScrolling) {
-      isScrolling = true;
-      animationFrameId = requestAnimationFrame(smoothScrollStep);
-    }
-  }
-
-  // Проверка переполнения контейнера
-  function isOverflowing(container) {
-    return container.scrollWidth > container.clientWidth;
-  }
-
-  // Добавление обработчиков событий для всех контейнеров
-  productLists.forEach((container) => {
-    let targetScrollPosition = 0;
-
-    // Обработчик колеса мыши
-    container.addEventListener('wheel', (event) => {
-      if (isOverflowing(container)) {
-        event.preventDefault();
-        targetScrollPosition += event.deltaY;
-        targetScrollPosition = Math.max(
-          0,
-          Math.min(targetScrollPosition, container.scrollWidth - container.clientWidth)
-        );
-        startSmoothScroll(container, targetScrollPosition);
-      }
-    });
-
-    // Обработчик для свайпа на мобильных устройствах
-    let startX;
-
-    container.addEventListener('touchstart', (event) => {
-      if (isOverflowing(container)) {
-        startX = event.touches[0].clientX;
-        cancelAnimationFrame(animationFrameId); // Останавливаем предыдущее движение
-      }
-    });
-
-    container.addEventListener('touchmove', (event) => {
-      if (isOverflowing(container) && startX) {
-        const touchX = event.touches[0].clientX;
-        const scrollDelta = startX - touchX;
-        targetScrollPosition += scrollDelta;
-        targetScrollPosition = Math.max(
-          0,
-          Math.min(targetScrollPosition, container.scrollWidth - container.clientWidth)
-        );
-        startX = touchX;
-        startSmoothScroll(container, targetScrollPosition);
-      }
-    });
-
-    container.addEventListener('touchend', () => {
-      startX = null;
-    });
-  });
-});
 
 /* Index - faq */
 
@@ -996,7 +936,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      if (!isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      }
     } else {
       categoriesBlock.style.height = '';
       categoriesBlock.classList.remove('active');
@@ -1019,7 +961,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleButton.addEventListener('click', toggleBlock);
 
-  window.addEventListener('resize', setInitialHeight);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      setInitialHeight();
+    } else if (isExpanded) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+    } else {
+      setInitialHeight();
+    }
+  });
+
   setInitialHeight();
 });
 
@@ -1124,7 +1075,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      if (!isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      }
     } else {
       categoriesBlock.style.height = '';
       categoriesBlock.classList.remove('active');
@@ -1147,7 +1100,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleButton.addEventListener('click', toggleBlock);
 
-  window.addEventListener('resize', setInitialHeight);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      setInitialHeight();
+    } else if (isExpanded) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+    } else {
+      setInitialHeight();
+    }
+  });
+
   setInitialHeight();
 });
 
@@ -1195,7 +1157,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
-      categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      if (!isExpanded) {
+        categoriesBlock.style.height = `${toggleButton.offsetHeight}px`;
+      }
     } else {
       categoriesBlock.style.height = '';
       categoriesBlock.classList.remove('active');
@@ -1218,31 +1182,212 @@ document.addEventListener('DOMContentLoaded', function() {
 
   toggleButton.addEventListener('click', toggleBlock);
 
-  window.addEventListener('resize', setInitialHeight);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      setInitialHeight();
+    } else if (isExpanded) {
+      categoriesBlock.style.height = `${toggleButton.offsetHeight + contentBlock.scrollHeight}px`;
+    } else {
+      setInitialHeight();
+    }
+  });
+
   setInitialHeight();
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll(".authorization__content-form");
 
+  const invalidSvg = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.4" d="M3.5 12C3.5 16.9699 7.52908 21 12.5 21C17.4709 21 21.5 16.9699 21.5 12C21.5 7.02908 17.4709 3 12.5 3C7.52908 3 3.5 7.02908 3.5 12Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.5057 15.6932V11.3936M12.5 8.35426V8.29102" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>`;
 
+  const validateInput = (input, type) => {
+    const value = input.value.trim();
 
+    switch (type) {
+      case "email":
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+      case "password":
+        return value.length >= 6;
+      case "phone":
+        const phoneRegex = /^\+7\d{10}$/;
+        return phoneRegex.test(value);
+      case "name":
+        return value.length > 1 && /^[A-Za-zА-Яа-яЁё\s'-]+$/.test(value);
+      default:
+        return false;
+    }
+  };
 
+  const createErrorMessage = (input, message) => {
+    let errorElement = input.nextElementSibling;
+    if (!errorElement || !errorElement.classList.contains("error-message")) {
+      errorElement = document.createElement("div");
+      errorElement.classList.add("error-message");
+      input.parentNode.insertBefore(errorElement, input.nextSibling);
+    }
+    errorElement.textContent = message;
+  };
 
+  const removeErrorMessage = (input) => {
+    const errorElement = input.nextElementSibling;
+    if (errorElement && errorElement.classList.contains("error-message")) {
+      errorElement.remove();
+    }
+  };
 
+  const setError = (input, message) => {
+    input.style.border = "1px solid rgba(255, 0, 0, 0.8)";
+    input.style.color = "red";
+    createErrorMessage(input, message);
+    if (input.type === "password") {
+      const passwordShowButton = input.parentNode.querySelector(".password-show");
+      if (passwordShowButton) passwordShowButton.innerHTML = invalidSvg;
+    }
+  };
 
+  const clearError = (input) => {
+    input.style.border = "";
+    input.style.color = "";
+    removeErrorMessage(input);
+    if (input.type === "password") {
+      const passwordShowButton = input.parentNode.querySelector(".password-show");
+      if (passwordShowButton) passwordShowButton.innerHTML = passwordShowButton.dataset.defaultSvg;
+    }
+  };
 
+  const handlePhoneInput = (input) => {
+    if (!input.value.startsWith("+7")) {
+      input.value = "+7";
+    } else {
+      input.value = input.value.replace(/[^\d+]/g, "").substring(0, 12);
+    }
+  };
 
+  const handleNameInput = (input) => {
+    input.value = input.value.replace(/\d/g, "");
+  };
 
+  forms.forEach((form) => {
+    const emailInput = form.querySelector(".authorization-email");
+    const passwordInput = form.querySelector(".authorization-password");
+    const passwordInputRepeat = form.querySelector(".authorization-password-repeat");
+    const passwordShowButton = form.querySelector(".password-show");
+    const passwordShowButtonRepeat = document.getElementById("password-show-repeat");
+    const phoneInput = form.querySelector(".authorization-phone");
+    const nameInput = form.querySelector(".authorization-name");
 
+    if (passwordShowButton) {
+      passwordShowButton.dataset.defaultSvg = passwordShowButton.innerHTML;
+      passwordShowButton.addEventListener("click", () => {
+        passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+      });
+    }
 
+    if (passwordShowButtonRepeat) {
+      passwordShowButtonRepeat.dataset.defaultSvg = passwordShowButtonRepeat.innerHTML;
+      passwordShowButtonRepeat.addEventListener("click", () => {
+        passwordInputRepeat.type = passwordInputRepeat.type === "password" ? "text" : "password";
+      });
+    }
 
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => handlePhoneInput(phoneInput));
+    }
 
+    if (nameInput) {
+      nameInput.addEventListener("input", () => handleNameInput(nameInput));
+    }
 
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
+      let isValid = true;
 
+      if (emailInput && !validateInput(emailInput, "email")) {
+        setError(emailInput, "Некорректный email");
+        isValid = false;
+      } else if (emailInput) {
+        clearError(emailInput);
+      }
 
+      if (passwordInput && !validateInput(passwordInput, "password")) {
+        setError(passwordInput, "Некорректный пароль");
+        isValid = false;
+      } else if (passwordInput) {
+        clearError(passwordInput);
+      }
 
+      if (passwordInputRepeat && !validateInput(passwordInputRepeat, "password")) {
+        setError(passwordInputRepeat, "Некорректный пароль");
+        isValid = false;
+      } else if (passwordInputRepeat) {
+        clearError(passwordInputRepeat);
+      }
 
+      if (phoneInput && !validateInput(phoneInput, "phone")) {
+        setError(phoneInput, "Некорректный номер телефона. Формат: +7XXXXXXXXXX");
+        isValid = false;
+      } else if (phoneInput) {
+        clearError(phoneInput);
+      }
 
+      if (nameInput && !validateInput(nameInput, "name")) {
+        setError(nameInput, "Имя должно содержать только буквы и быть не короче двух символов");
+        isValid = false;
+      } else if (nameInput) {
+        clearError(nameInput);
+      }
 
+      if (isValid) {
+        form.submit();
+      }
+    });
+
+    if (emailInput) {
+      emailInput.addEventListener("input", () => {
+        if (validateInput(emailInput, "email")) {
+          clearError(emailInput);
+        } else {
+          setError(emailInput, "Некорректный email");
+        }
+      });
+    }
+
+    if (passwordInput) {
+      passwordInput.addEventListener("input", () => clearError(passwordInput));
+    }
+
+    if (passwordInputRepeat) {
+      passwordInputRepeat.addEventListener("input", () => clearError(passwordInput));
+    }
+
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => {
+        handlePhoneInput(phoneInput);
+        if (validateInput(phoneInput, "phone")) {
+          clearError(phoneInput);
+        } else {
+          setError(phoneInput, "Некорректный номер телефона. Формат: +7XXXXXXXXXX");
+        }
+      });
+    }
+
+    if (nameInput) {
+      nameInput.addEventListener("input", () => {
+        handleNameInput(nameInput);
+        if (validateInput(nameInput, "name")) {
+          clearError(nameInput);
+        } else {
+          setError(nameInput, "Имя должно содержать только буквы и быть не короче двух символов");
+        }
+      });
+    }
+  });
+});
 

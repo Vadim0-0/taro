@@ -93,6 +93,11 @@
         </nav>
 
         <div class="header__content-links">
+          <button class="btn-global header__content-links__favorite" id="pop-up-favorite-open">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.9364 3.99775C20.1402 5.07291 21.2798 8.72844 20.299 11.914C18.6924 17.0251 12.0035 20.2701 12.0035 20.2701C12.0035 20.2701 5.21285 16.9668 3.69966 11.914C2.71888 8.72844 3.86779 5.08264 7.07165 3.99775C7.90111 3.72823 8.78007 3.66596 9.63666 3.81775C10.4932 3.96856 11.3039 4.58252 12.0035 5.12253C12.7004 4.57765 13.5121 3.96078 14.3696 3.80899C15.227 3.65818 16.107 3.7224 16.9364 3.99775Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
           <div class="header__content-links__search">
             <button class="btn-global header-search-open">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,14 +105,14 @@
                 <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="" stroke-width="1.5" stroke-linecap="square" />
               </svg>
             </button>
-            <a href="#"  class="btn-global header__content-links__search-btn" id="header-menu-open">
+            <button href="#"  class="btn-global header__content-links__search-btn" id="header-menu-open">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6.5C3 3.87479 3.02811 3 6.5 3C9.97189 3 10 3.87479 10 6.5C10 9.12521 10.0111 10 6.5 10C2.98893 10 3 9.12521 3 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M14 6.5C14 3.87479 14.0281 3 17.5 3C20.9719 3 21 3.87479 21 6.5C21 9.12521 21.0111 10 17.5 10C13.9889 10 14 9.12521 14 6.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17.5C3 14.8748 3.02811 14 6.5 14C9.97189 14 10 14.8748 10 17.5C10 20.1252 10.0111 21 6.5 21C2.98893 21 3 20.1252 3 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M14 17.5C14 14.8748 14.0281 14 17.5 14C20.9719 14 21 14.8748 21 17.5C21 20.1252 21.0111 21 17.5 21C13.9889 21 14 20.1252 14 17.5Z" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-            </a>
+            </button>
           </div>
           <a href="mail:info@kasarina.ru" class="header__content-links__email">
             info@kasarina.ru
@@ -971,6 +976,31 @@
 
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="pop-up-favorite">
+    <div class="pop-up-favorite__content">
+      <button class="btn-global pop-up-favorite__content-close" id="pop-up-favorite-colse">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <span class="pop-up-favorite__content-icon">
+        <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.2275 1.66291C29.5671 3.45485 31.4665 9.5474 29.8318 14.8567C27.1542 23.3752 16.006 28.7835 16.006 28.7835C16.006 28.7835 4.68821 23.278 2.16623 14.8567C0.531586 9.5474 2.44643 3.47106 7.78621 1.66291C9.16864 1.21371 10.6336 1.10993 12.0612 1.36291C13.4887 1.61426 14.8399 2.63753 16.006 3.53755C17.1675 2.62941 18.5203 1.6013 19.9494 1.34831C21.3785 1.09696 22.8451 1.204 24.2275 1.66291Z" stroke="#015B83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <h4>
+        Избранное
+      </h4>
+      <p>
+        Чтобы увидеть товары из Избранного, пожалуйста, войдите в аккаунт.
+      </p>
+      <a href="#" class="btn-global pop-up-favorite__content-btn">
+        Войти
+      </a>
     </div>
   </div>
 
