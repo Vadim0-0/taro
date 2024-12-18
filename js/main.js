@@ -733,6 +733,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const offset = (i % 2 === 0 ? -1 : 1) * Math.floor((i + 1) / 2) * 40;
           card.style.transform = `translateX(${offset}px) translateZ(-${i * 15}px)`;
 
+          card.addEventListener('click', () => window.open(card.dataset.link, "_blank")); // Добавляем обработчик клика для перехода по ссылке
+
           cards.push(card);
           cardsContainer.appendChild(card);
       }
@@ -757,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateCentralCardLink() {
-      cards.forEach(card => card.style.pointerEvents = 'none');
+      cards.forEach(card => card.style.pointerEvents = 'all');
       const frontCard = cards[0];
       frontCard.style.pointerEvents = 'auto';
       frontCard.onclick = () => window.open(frontCard.dataset.link, "_blank");
@@ -798,6 +800,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSwipe();
   document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
 });
+
+
 
 
 /* Карта таро - перемещение изображения при листании */
