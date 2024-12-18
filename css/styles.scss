@@ -2895,6 +2895,7 @@
     background-color: var(--white);
 
     & h2 {
+      max-width: 350px;
       margin-bottom: 15px;
       font-weight: 500;
       font-size: 34px;
@@ -3060,10 +3061,22 @@
   }
 
   &__thanks {
+    position: absolute;
     width: 460px;
     padding: 42px 39px;
     background-color: var(--white);
     border-radius: 20px;
+
+    &-close {
+      @include flex-center;
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      top: -64px;
+      right: -44px;
+      border-radius: 10px;
+      background-color: var(--white);
+    }
 
     & .icon {
       @include flex-center;
@@ -3106,6 +3119,17 @@
         color: var(--siniy);
         background-color: var(--white);
       }
+    }
+
+    & .background {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
     }
   }
 }
@@ -5143,6 +5167,18 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .authorization {
+
+    &__thanks {
+
+      &-close {
+        border-radius: 20px;
+        top: 0;
+        right: 0;
       }
     }
   }
