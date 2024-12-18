@@ -1745,6 +1745,7 @@ button {
     display: block;
   }
   .header .header__content-mobile .header__content-nav__list-item.resize {
+    min-height: 36px;
     overflow: hidden;
     transition: all 0.5s ease;
   }
