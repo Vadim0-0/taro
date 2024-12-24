@@ -18,7 +18,19 @@ body {
   position: relative;
   font-family: var(--font-family);
   background-color: var(--seryy);
+  padding-bottom: 30px;
 
+  &.none {
+    padding-bottom: 0;
+  }
+}
+
+main {
+  padding-top: 67px;
+
+  &.none {
+    padding-top: 0;
+  }
 }
 
 img {
@@ -638,6 +650,11 @@ button {
 }
 
 @media (max-width: 768px) {
+
+  body {
+    padding-bottom: 15px;
+  }
+
   .section-title {
     font-size: 34px;
   }
@@ -649,12 +666,6 @@ button {
   .pop-up-search {
     top: 75px;
 
-    & .container {
-      transform: translateY(-500px);
-      background-color: var(--seryy);
-      transition: all 0.5s ease;
-    }
-
     &.active {
       & .container {
         transform: translateY(0);
@@ -664,7 +675,7 @@ button {
     &__content {
       max-width: 100%;
       margin-left: 0;
-      padding: 0;
+      padding: 0 15px;
       padding-top: 10px;
       padding-bottom: 10px;
       height: auto;
