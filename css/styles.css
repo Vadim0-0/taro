@@ -5138,7 +5138,7 @@ button {
     margin-bottom: 17px;
   }
   .index-products__content-list {
-    width: 110%;
+    width: 107%;
     margin-bottom: 24px;
     transform: translateX(-15px);
   }
@@ -5167,7 +5167,7 @@ button {
   }
   .index-store__content-list {
     margin-bottom: 20px;
-    width: 110%;
+    width: 107%;
     transform: translateX(-15px);
   }
   .index-store__content-list .product-card {
@@ -5237,11 +5237,11 @@ button {
     visibility: hidden;
   }
   .reviews__content-bloks .reviews-read-blocks {
-    width: 110%;
+    width: 107%;
     transform: translateX(-15px);
   }
   .reviews__content-bloks .reviews-video-blocks {
-    width: 110%;
+    width: 107%;
     transform: translateX(-15px);
   }
   .index-mailing {
@@ -5283,7 +5283,7 @@ button {
   }
   .index-articles__content-list {
     margin-bottom: 22px;
-    width: 110%;
+    width: 107%;
     transform: translateX(-15px);
   }
   .index-articles__content-list .product-card {
@@ -5308,7 +5308,7 @@ button {
   }
   .index-tests__content-list {
     margin-bottom: 25px;
-    width: 110%;
+    width: 107%;
     transform: translateX(-15px);
   }
   .index-tests__content-list .product-card {
@@ -5378,7 +5378,7 @@ button {
     display: none;
   }
   .productPage-hero__content-images__btns {
-    width: 110%;
+    width: 107%;
     overflow-x: scroll;
     transform: translateX(-15px);
   }
@@ -5405,7 +5405,7 @@ button {
     margin-bottom: 20px;
   }
   .productPage-also__content-list {
-    width: 110%;
+    width: 107%;
     margin-bottom: 40px;
     transform: translateX(-15px);
   }
