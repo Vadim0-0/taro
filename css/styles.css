@@ -5151,9 +5151,7 @@ button {
     margin-bottom: 17px;
   }
   .index-products__content-list {
-    width: 107%;
     margin-bottom: 24px;
-    transform: translateX(-15px);
   }
   .index-products__content-list .product-card {
     min-width: 350px;
@@ -5180,8 +5178,6 @@ button {
   }
   .index-store__content-list {
     margin-bottom: 20px;
-    width: 107%;
-    transform: translateX(-15px);
   }
   .index-store__content-list .product-card {
     min-width: 350px;
@@ -5249,14 +5245,6 @@ button {
     pointer-events: nome;
     visibility: hidden;
   }
-  .reviews__content-bloks .reviews-read-blocks {
-    width: 107%;
-    transform: translateX(-15px);
-  }
-  .reviews__content-bloks .reviews-video-blocks {
-    width: 107%;
-    transform: translateX(-15px);
-  }
   .index-mailing {
     padding-bottom: 100px;
   }
@@ -5296,8 +5284,6 @@ button {
   }
   .index-articles__content-list {
     margin-bottom: 22px;
-    width: 107%;
-    transform: translateX(-15px);
   }
   .index-articles__content-list .product-card {
     min-width: 350px;
@@ -5321,8 +5307,6 @@ button {
   }
   .index-tests__content-list {
     margin-bottom: 25px;
-    width: 107%;
-    transform: translateX(-15px);
   }
   .index-tests__content-list .product-card {
     min-width: 350px;
@@ -5391,9 +5375,7 @@ button {
     display: none;
   }
   .productPage-hero__content-images__btns {
-    width: 107%;
     overflow-x: scroll;
-    transform: translateX(-15px);
   }
   .productPage-hero__content-images__btns button {
     min-width: 400px;
@@ -5418,9 +5400,7 @@ button {
     margin-bottom: 20px;
   }
   .productPage-also__content-list {
-    width: 107%;
     margin-bottom: 40px;
-    transform: translateX(-15px);
   }
   .productPage-also__content-list .product-card {
     min-width: 350px;
@@ -5838,6 +5818,10 @@ button {
   }
 }
 @media (max-width: 560px) {
+  .index-store__content-list {
+    width: 107%;
+    transform: translateX(-15px);
+  }
   .personalAccount-hero__content-btns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -5853,6 +5837,35 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .index-products__content-list {
+    width: 107%;
+    transform: translateX(-15px);
+  }
+  .reviews__content-bloks .reviews-read-blocks {
+    width: 107%;
+    transform: translateX(-15px);
+  }
+  .reviews__content-bloks .reviews-video-blocks {
+    width: 107%;
+    transform: translateX(-15px);
+  }
+  .index-articles__content-list {
+    width: 107%;
+    transform: translateX(-15px);
+  }
+  .index-tests__content-list {
+    width: 107%;
+    transform: translateX(-15px);
+  }
+  .productPage-hero__content-images__btns {
+    width: 107%;
+    overflow-x: scroll;
+    transform: translateX(-15px);
+  }
+  .productPage-also__content-list {
+    width: 107%;
+    transform: translateX(-15px);
   }
   .tests-hero__content-pages__cards {
     display: flex;
