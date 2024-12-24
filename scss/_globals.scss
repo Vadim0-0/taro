@@ -649,10 +649,20 @@ button {
   }
 }
 
+@media (max-width: 1280px) {
+  main {
+    padding-top: 107px;
+  }
+}
+
 @media (max-width: 768px) {
 
   body {
     padding-bottom: 15px;
+  }
+
+  main {
+    padding-top: 75px;
   }
 
   .section-title {
