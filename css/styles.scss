@@ -2884,7 +2884,7 @@
 
   & .container {
     @include flex-center;
-    min-height: 90vh;
+    min-height: 100vh;
   }
 
   &__content {
@@ -3966,7 +3966,6 @@
   }
 
   .index-products {
-    overflow: hidden;
     padding-bottom: 103px;
 
     &__content {
@@ -3978,8 +3977,9 @@
       }
 
       &-list {
-        width: 102%;
+        width: 110%;
         margin-bottom: 24px;
+        transform: translateX(-15px);
 
         & .product-card {
           min-width: 350px;
@@ -4016,6 +4016,8 @@
 
       &-list {
         margin-bottom: 20px;
+        width: 110%;
+        transform: translateX(-15px);
 
         & .product-card {
           min-width: 350px;
@@ -4107,11 +4109,13 @@
       &-bloks {
 
         & .reviews-read-blocks {
-          width: 107%;
+          width: 110%;
+          transform: translateX(-15px);
         }
 
         & .reviews-video-blocks {
-          width: 107%;
+          width: 110%;
+          transform: translateX(-15px);
         }
       }
     }
@@ -4172,6 +4176,8 @@
 
       &-list {
         margin-bottom: 22px;
+        width: 110%;
+        transform: translateX(-15px);
 
         & .product-card {
           min-width: 350px;
@@ -4204,6 +4210,8 @@
 
       &-list {
         margin-bottom: 25px;
+        width: 110%;
+        transform: translateX(-15px);
 
         & .product-card {
           min-width: 350px;
@@ -4319,8 +4327,9 @@
         }
 
         &__btns {
-          width: 102%;
+          width: 110%;
           overflow-x: scroll;
+          transform: translateX(-15px);
 
           & button {
             min-width: 400px;
@@ -4359,8 +4368,9 @@
       }
 
       &-list {
-        width: 102%;
+        width: 110%;
         margin-bottom: 40px;
+        transform: translateX(-15px);
 
         & .product-card {
           min-width: 350px;
@@ -4839,13 +4849,12 @@
       }
 
       &-list {
-        width: 102%;
         margin-bottom: 22px;
       }
 
       &-btn {
         display: flex;
-        width: 400px;
+        width: 100%;
         padding: 21px;
         border-radius: 15px;
         background-color: inherit;
