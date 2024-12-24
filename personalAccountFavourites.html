@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" id="header">
     <div class="container">
       <div class="header__content">
         <nav class="header__content-nav">
@@ -1168,56 +1168,92 @@
   </footer>
 
   <div class="pop-up-search">
-    <div class="container">
-      <div class="pop-up-search__content">
-        <div class="pop-up-search__content-top">
-          <h2 class="section-title">
-            Поиск
-          </h2>
-          <button id="pop-up-search-close">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="pop-up-search__content-nav">
-          <button class="active">
-            Везде
-          </button>
-          <button>
-            Курсы
-          </button>
-          <button>
-            Магазин
-          </button>
-          <button>
-            Тесты
-          </button>
-          <button>
-            Блог
-          </button>
-        </div>
-        <div class="pop-up-search__content-search">
-          <label for="pop-up-search-input" class="pop-up-search__content-search__label">
-            <input type="text" id="pop-up-search-input" placeholder="Найти">
-            <div class="pop-up-search__content-search__label-btns">
-              <button class="clear-btn" id="pop-up-search-clean-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <button class="search-btn" id="pop-up-search-btn">
-                Искать
-              </button>
-            </div>
-          </label>
-        </div>
-        <div class="pop-up-search__content-pages">
+    <div class="pop-up-search__content">
+      <div class="pop-up-search__content-top">
+        <h2 class="section-title">
+          Поиск
+        </h2>
+        <button id="pop-up-search-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="pop-up-search__content-nav">
+        <button class="active">
+          Везде
+        </button>
+        <button>
+          Курсы
+        </button>
+        <button>
+          Магазин
+        </button>
+        <button>
+          Тесты
+        </button>
+        <button>
+          Блог
+        </button>
+      </div>
+      <div class="pop-up-search__content-search">
+        <label for="pop-up-search-input" class="pop-up-search__content-search__label">
+          <input type="text" id="pop-up-search-input" placeholder="Найти">
+          <div class="pop-up-search__content-search__label-btns">
+            <button class="clear-btn" id="pop-up-search-clean-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M6.5 6L18.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18.5 6L6.5 18" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="search-btn" id="pop-up-search-btn">
+              Искать
+            </button>
+          </div>
+        </label>
+      </div>
+      <div class="pop-up-search__content-pages">
 
-          <!-- Курсы -->
-          <ul class="pop-up-search__content-pages__list">
+        <!-- Курсы -->
+        <ul class="pop-up-search__content-pages__list">
+        <li class="pop-up-search__content-pages__list-item">
+          <a href="#">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+              <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+            </svg>
+            <p>
+              Курс 1
+            </p>
+          </a>
+        </li>
+        <li class="pop-up-search__content-pages__list-item">
+          <a href="#">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+              <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+            </svg>
+            <p>
+              Курс 2
+            </p>
+          </a>
+        </li>
+        <li class="pop-up-search__content-pages__list-item">
+          <a href="#">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+              <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+            </svg>
+            <p>
+              Курс 3
+            </p>
+          </a>
+        </li>
+        </ul>
+
+        <!-- Магазин -->
+        <ul class="pop-up-search__content-pages__list">
           <li class="pop-up-search__content-pages__list-item">
             <a href="#">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1251,120 +1287,82 @@
               </p>
             </a>
           </li>
-          </ul>
+        </ul>
 
-          <!-- Магазин -->
-          <ul class="pop-up-search__content-pages__list">
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 1
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 2
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 3
-                </p>
-              </a>
-            </li>
-          </ul>
+        <!-- Тесты -->
+        <ul class="pop-up-search__content-pages__list">
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 1
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 2
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 3
+              </p>
+            </a>
+          </li>
+        </ul>
 
-          <!-- Тесты -->
-          <ul class="pop-up-search__content-pages__list">
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 1
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 2
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 3
-                </p>
-              </a>
-            </li>
-          </ul>
+        <!-- Блог -->
+        <ul class="pop-up-search__content-pages__list">
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 1
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 2
+              </p>
+            </a>
+          </li>
+          <li class="pop-up-search__content-pages__list-item">
+            <a href="#">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
+                <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
+              </svg>
+              <p>
+                Курс 3
+              </p>
+            </a>
+          </li>
+        </ul>
 
-          <!-- Блог -->
-          <ul class="pop-up-search__content-pages__list">
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 1
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 2
-                </p>
-              </a>
-            </li>
-            <li class="pop-up-search__content-pages__list-item">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.2485 18.8273C15.6881 18.8273 19.287 15.2283 19.287 10.7888C19.287 6.34922 15.6881 2.75024 11.2485 2.75024C6.80894 2.75024 3.20996 6.34922 3.20996 10.7888C3.20996 15.2283 6.80894 18.8273 11.2485 18.8273Z" stroke="#222222" stroke-width="1.5" stroke-linecap="square" />
-                  <path opacity="0.4" d="M16.7372 16.7084L21.2907 21.25" stroke="#222222" stroke-linecap="square" />
-                </svg>
-                <p>
-                  Курс 3
-                </p>
-              </a>
-            </li>
-          </ul>
-
-        </div>
       </div>
     </div>
   </div>
