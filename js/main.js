@@ -127,6 +127,32 @@ activeBlock.addEventListener("touchend", () => {
 /* Header - открыте меню */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById('header');
+  let lastScrollY = window.scrollY;
+  let scrollThreshold = 30; // Adjust threshold for hiding the header
+  let accumulatedScroll = 0;
+
+  window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollY;
+
+      if (scrollDifference > 0) {
+          // Scrolling down
+          accumulatedScroll += scrollDifference;
+          if (accumulatedScroll > scrollThreshold) {
+              header.classList.add('hidden');
+          }
+      } else {
+          // Scrolling up
+          accumulatedScroll = 0;
+          header.classList.remove('hidden');
+      }
+
+      lastScrollY = currentScrollY;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   // Находим элементы кнопок и блока
   const headerMenuOpen = document.getElementById("pop-up-favorite-open");
   const headerMenuClose = document.getElementById("pop-up-favorite-colse");
@@ -299,9 +325,6 @@ document.addEventListener("DOMContentLoaded", function () {
     coursesBlock.classList.remove("active");
   });
 });
-
-
-
 
 /* Index - листание блока */
 
@@ -806,39 +829,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Карта таро - перемещение изображения при листании */
 
-document.addEventListener("scroll", function () {
-  // Выбираем элементы
+document.addEventListener("DOMContentLoaded", function () {
   const imgContainer = document.getElementById('pageCardDay-hero__content-img');
   const heroContent = document.getElementById('pageCardDay-hero__content');
 
-  // Проверяем, существуют ли оба элемента на странице
   if (imgContainer && heroContent) {
-    // Получаем начальное значение top из CSS
     const computedStyle = window.getComputedStyle(imgContainer);
-    const initialTop = parseInt(computedStyle.top, 10); // Преобразуем значение top в число
+    const initialTop = parseInt(computedStyle.top, 10);
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Функция для управления положением изображения
     function handleScroll() {
-      if (window.innerWidth >= 1024) { // Условие для экранов шириной 1024px и больше
+      if (window.innerWidth >= 1024) {
         const heroContentRect = heroContent.getBoundingClientRect();
         const imgContainerHeight = imgContainer.clientHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Проверяем, если блок находится в зоне фиксации
+        const isScrollingDown = scrollTop > lastScrollTop;
+        lastScrollTop = scrollTop;
+
         if (heroContentRect.top <= initialTop && heroContentRect.bottom > imgContainerHeight + initialTop) {
-          imgContainer.classList.add('fixed'); // Добавляем класс фиксации
-        }
-        // Если блок выходит из зоны фиксации (прокручиваем вверх)
-        else {
-          imgContainer.classList.remove('fixed'); // Убираем класс фиксации
+          if (isScrollingDown) {
+            imgContainer.style.top = "0px";
+          } else {
+            imgContainer.style.top = "67px";
+          }
+          imgContainer.classList.add('fixed');
+        } else {
+          imgContainer.classList.remove('fixed');
+          imgContainer.style.top = "";
         }
       } else {
-        imgContainer.classList.remove('fixed'); // Убираем класс для экранов меньше 1024px
+        imgContainer.classList.remove('fixed');
+        imgContainer.style.top = "";
       }
     }
 
-    // Добавляем обработчик событий
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll); // Перепроверка при изменении размера окна
+    window.addEventListener('resize', handleScroll);
   }
 });
 
