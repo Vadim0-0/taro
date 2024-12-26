@@ -39,88 +39,112 @@ document.querySelectorAll('.reviews-read-block__btn').forEach(button => {
 /* Отзывы - переключение блоков и  листание */
 
 document.addEventListener("DOMContentLoaded", function () {
-// Элементы для навигации
-const btnVideo = document.getElementById("reviews-video");
-const btnRead = document.getElementById("reviews-read");
-const reviewsVideoBlocks = document.querySelector(".reviews-video-blocks");
-const reviewsReadBlocks = document.querySelector(".reviews-read-blocks");
-const btnPrev = document.getElementById("reviews-btn-prev");
-const btnNext = document.getElementById("reviews-btn-next");
+  // Элементы для навигации
+  const btnVideo = document.getElementById("reviews-video");
+  const btnRead = document.getElementById("reviews-read");
+  const reviewsVideoBlocks = document.querySelector(".reviews-video-blocks");
+  const reviewsReadBlocks = document.querySelector(".reviews-read-blocks");
+  const btnPrev = document.getElementById("reviews-btn-prev");
+  const btnNext = document.getElementById("reviews-btn-next");
+  const container = document.querySelector(".container"); // Контейнер для отслеживания отступа
 
-// Начальные настройки
-let activeBlock = reviewsVideoBlocks; // По умолчанию показываем reviewsVideoBlocks
-let cardWidth = activeBlock.querySelector("div").offsetWidth;
-let marginRight = parseInt(window.getComputedStyle(activeBlock.querySelector("div")).marginRight);
-let scrollWidth = cardWidth + marginRight;
+  // Начальные настройки
+  let activeBlock = reviewsVideoBlocks; // По умолчанию показываем reviewsVideoBlocks
+  let cardWidth = activeBlock.querySelector("div").offsetWidth;
+  let marginRight = parseInt(window.getComputedStyle(activeBlock.querySelector("div")).marginRight);
+  let scrollWidth = cardWidth + marginRight;
 
-// Функция для переключения видимых блоков
-function toggleActiveBlock(showElement, hideElement, activeButton, inactiveButton) {
-  // Показать нужный блок и скрыть другой
-  showElement.style.display = "flex";
-  hideElement.style.display = "none";
+  // Функция для обновления ширины блоков, левого отступа и translate
+  function updateBlockStyles() {
+    const containerLeftMargin = parseInt(window.getComputedStyle(container).marginLeft);
+    const screenWidth = window.innerWidth;
 
-  // Обновляем активную кнопку
-  activeButton.classList.add("active");
-  inactiveButton.classList.remove("active");
+    // Устанавливаем ширину блоков равной ширине экрана
+    reviewsVideoBlocks.style.width = `${screenWidth - 5}px`;
+    reviewsReadBlocks.style.width = `${screenWidth}px`;
 
-  // Переназначаем активный блок для прокрутки
-  activeBlock = showElement;
+    // Обновляем отступы
+    reviewsVideoBlocks.style.paddingLeft = `${containerLeftMargin}px`;
+    reviewsReadBlocks.style.paddingLeft = `${containerLeftMargin}px`;
 
-  // Обновление ширины карточек
-  cardWidth = activeBlock.querySelector("div").offsetWidth;
-  marginRight = parseInt(window.getComputedStyle(activeBlock.querySelector("div")).marginRight);
-  scrollWidth = cardWidth + marginRight;
+    // Сдвиг блоков в начало экрана
+    const translateX = -containerLeftMargin;
+    reviewsVideoBlocks.style.transform = `translateX(${translateX}px)`;
+    reviewsReadBlocks.style.transform = `translateX(${translateX}px)`;
+  }
 
-  activeBlock.scrollTo({ left: 0 }); // Сброс прокрутки
-}
+  // Вызываем функцию при загрузке страницы и при изменении размера окна
+  updateBlockStyles();
+  window.addEventListener("resize", updateBlockStyles);
 
-// Переключение блоков по клику на кнопки "Посмотреть" и "Прочитать"
-btnVideo.addEventListener("click", () => toggleActiveBlock(reviewsVideoBlocks, reviewsReadBlocks, btnVideo, btnRead));
-btnRead.addEventListener("click", () => toggleActiveBlock(reviewsReadBlocks, reviewsVideoBlocks, btnRead, btnVideo));
+  // Функция для переключения видимых блоков
+  function toggleActiveBlock(showElement, hideElement, activeButton, inactiveButton) {
+    // Показать нужный блок и скрыть другой
+    showElement.style.display = "flex";
+    hideElement.style.display = "none";
 
-// Функция для плавного скроллинга
-let isScrolling = false; // Флаг для предотвращения повторного нажатия
+    // Обновляем активную кнопку
+    activeButton.classList.add("active");
+    inactiveButton.classList.remove("active");
 
-function smoothScroll(direction) {
-  if (isScrolling) return; // Если уже происходит скроллинг, выходим из функции
-  isScrolling = true; // Устанавливаем флаг, что скроллинг начался
+    // Переназначаем активный блок для прокрутки
+    activeBlock = showElement;
 
-  activeBlock.scrollBy({
-    left: direction * scrollWidth,
-    behavior: "smooth"
+    // Обновление ширины карточек
+    cardWidth = activeBlock.querySelector("div").offsetWidth;
+    marginRight = parseInt(window.getComputedStyle(activeBlock.querySelector("div")).marginRight);
+    scrollWidth = cardWidth + marginRight;
+
+    activeBlock.scrollTo({ left: 0 }); // Сброс прокрутки
+  }
+
+  // Переключение блоков по клику на кнопки "Посмотреть" и "Прочитать"
+  btnVideo.addEventListener("click", () => toggleActiveBlock(reviewsVideoBlocks, reviewsReadBlocks, btnVideo, btnRead));
+  btnRead.addEventListener("click", () => toggleActiveBlock(reviewsReadBlocks, reviewsVideoBlocks, btnRead, btnVideo));
+
+  // Функция для плавного скроллинга
+  let isScrolling = false; // Флаг для предотвращения повторного нажатия
+
+  function smoothScroll(direction) {
+    if (isScrolling) return; // Если уже происходит скроллинг, выходим из функции
+    isScrolling = true; // Устанавливаем флаг, что скроллинг начался
+
+    activeBlock.scrollBy({
+      left: direction * scrollWidth,
+      behavior: "smooth"
+    });
+
+    // Сбрасываем флаг через небольшую задержку
+    setTimeout(() => {
+      isScrolling = false;
+    }, 400); // Подождем 400 мс перед тем, как разрешить новый скроллинг
+  }
+
+  // Обработчики для кнопок "предыдущий" и "следующий"
+  btnPrev.addEventListener("click", () => smoothScroll(-1));
+  btnNext.addEventListener("click", () => smoothScroll(1));
+
+  // Добавление свайпа для прокрутки на мобильных устройствах
+  let startX = 0;
+  let currentX = 0;
+
+  activeBlock.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
   });
 
-  // Сбрасываем флаг через небольшую задержку
-  setTimeout(() => {
-    isScrolling = false;
-  }, 400); // Подождем 400 мс перед тем, как разрешить новый скроллинг
-}
+  activeBlock.addEventListener("touchmove", (e) => {
+    currentX = e.touches[0].clientX;
+  });
 
-// Обработчики для кнопок "предыдущий" и "следующий"
-btnPrev.addEventListener("click", () => smoothScroll(-1));
-btnNext.addEventListener("click", () => smoothScroll(1));
-
-// Добавление свайпа для прокрутки на мобильных устройствах
-let startX = 0;
-let currentX = 0;
-
-activeBlock.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
+  activeBlock.addEventListener("touchend", () => {
+    if (startX - currentX > 50) {
+      smoothScroll(1); // Прокрутка вправо
+    } else if (currentX - startX > 50) {
+      smoothScroll(-1); // Прокрутка влево
+    }
+  });
 });
 
-activeBlock.addEventListener("touchmove", (e) => {
-  currentX = e.touches[0].clientX;
-});
-
-activeBlock.addEventListener("touchend", () => {
-  if (startX - currentX > 50) {
-    smoothScroll(1); // Прокрутка вправо
-  } else if (currentX - startX > 50) {
-    smoothScroll(-1); // Прокрутка влево
-  }
-});
-
-});
 
 
 
@@ -731,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Карта таро */
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
   const cardCount = 15;
   const cardsContainer = document.getElementById('cards');
   let cards = [];
@@ -744,6 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "https://example.com/card13", "https://example.com/card14", "https://example.com/card15"
   ];
 
+  // Функция для создания карт
   function createCards() {
       for (let i = 0; i < cardCount; i++) {
           const card = document.createElement('div');
@@ -764,12 +789,14 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCentralCardLink();
   }
 
+  // Функция для перемещения карты на передний план
   function bringToFront(index) {
       const selectedCard = cards.splice(index, 1)[0];
       cards.unshift(selectedCard);
       updateCards();
   }
 
+  // Обновление всех карт в карусели
   function updateCards() {
       cards.forEach((card, i) => {
           card.style.zIndex = cardCount - i;
@@ -781,6 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCentralCardLink();
   }
 
+  // Обновление ссылки на центральной карте
   function updateCentralCardLink() {
       cards.forEach(card => card.style.pointerEvents = 'all');
       const frontCard = cards[0];
@@ -788,12 +816,14 @@ document.addEventListener('DOMContentLoaded', () => {
       frontCard.onclick = () => window.open(frontCard.dataset.link, "_blank");
   }
 
+  // Перемешивание карт и выбор случайной карты
   function shuffleAndPick() {
       cards.sort(() => Math.random() - 0.5);
       const randomIndex = Math.floor(Math.random() * cards.length);
       bringToFront(randomIndex);
   }
 
+  // Настройка свайпа
   function setupSwipe() {
       let startX = 0;
       let endX = 0;
@@ -822,9 +852,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createCards();
   setupSwipe();
   document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
-});
-
-
+}); */
 
 
 /* Карта таро - перемещение изображения при листании */
