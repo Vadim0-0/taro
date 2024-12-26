@@ -724,7 +724,6 @@ template {
 }
 
 .container {
-  overflow-x: hidden;
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1410px;
@@ -742,7 +741,7 @@ template {
 }
 @media (max-width: 450px) {
   .container {
-    padding: 0 16px;
+    overflow-y: hidden;
   }
 }
 html, body, div, span, object, iframe,
@@ -885,6 +884,7 @@ body.none {
 }
 
 main {
+  overflow-x: hidden;
   padding-top: 67px;
 }
 main.none {
@@ -2219,12 +2219,12 @@ button {
 .reviews__content-bloks .reviews-video-blocks {
   display: flex;
   overflow-x: auto;
-  width: 100%;
+  width: 120%;
 }
 .reviews__content-bloks .reviews-read-blocks {
   display: none;
   overflow-x: auto;
-  width: 102%;
+  width: 120%;
 }
 
 .index-mailing {
@@ -3605,7 +3605,7 @@ button {
   perspective: 421px;
   margin-bottom: 40px;
 }
-.cardDay-cards__content-bloks .card {
+.cardDay-cards__content-bloks .carousel-item {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -5518,6 +5518,7 @@ button {
     margin-bottom: 30px;
     width: 177px;
     height: 295px;
+    perspective: 260px;
   }
   .pageCardDay-hero {
     padding-bottom: 104px;
