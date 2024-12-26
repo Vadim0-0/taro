@@ -300,13 +300,13 @@
       & .reviews-video-blocks {
         display: flex;
         overflow-x: auto;
-        width: 100%;
+        width: 120%;
       }
 
       & .reviews-read-blocks {
         display: none;
         overflow-x: auto;
-        width: 102%;
+        width: 120%;
       }
     }
   }
@@ -1911,7 +1911,7 @@
       perspective: 421px;
       margin-bottom: 40px;
 
-      & .card {
+      & .carousel-item {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -4558,6 +4558,7 @@
         margin-bottom: 30px;
         width: 177px;
         height: 295px;
+        perspective: 260px;
       }
     }
   }
