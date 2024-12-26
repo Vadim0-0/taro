@@ -305,10 +305,87 @@
 
       <section class="cardDay-cards">
         <div class="cardDay-cards__content">
-          <div class="cardDay-cards__content-bloks" id="cards">
-            <!-- Карты добовляются через js, ссылки подключаются тамже -->
+          <div class="cardDay-cards__content-bloks carousel" id="cards">
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
+            <a class="carousel-item" href="#one!"></a>
+            <a class="carousel-item" href="#two!"></a>
+            <a class="carousel-item" href="#three!"></a>
+            <a class="carousel-item" href="#four!"></a>
+            <a class="carousel-item" href="#five!"></a>
           </div>
-          <button class="btn-global" id="shuffleBtn">Перемешать</button>
+          <button class="btn-global " onclick="shuffleCards(); return false;">Перемешать</button>
         </div>
       </section>
 
@@ -730,6 +807,65 @@
     </div>
   </div>
 
+  <script type="text/javascript"
+  src="https://code.jquery.com/jquery-1.12.0.min.js">
+      </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    jQuery(function($) {
+        $('.carousel').carousel({
+            padding: 80,
+            numVisible: 20,
+            duration: 0.5
+        });
+        $('.carousel-item').each(function() {
+            $(this).click(function() {
+                var my_id = $(this).attr('data-id');
+                cardChosen(cardArray[my_id]);
+            })
+        })
+    })
+
+    let cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78];
+
+    function shuffle(array) {
+        let currentIndex = array.length;
+        while (currentIndex != 0) {
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+    }
+
+    function shuffleCards(){
+        shuffle(cardArray);
+        $('.carousel').carousel('next', randomInteger(20,50));
+    }
+
+    function cardChosen(cardId){
+        $.post('/intscr/result.php', { action : 'ready_card', card_id : cardId }, function(data){
+            if (data.status === 'OK'){
+                window.location.href = data.url;
+            }
+            else {
+                alert(data);
+            }
+        }, 'json')
+    }
+
+    function randomInteger(min, max) {
+        let rand = min + Math.random() * (max + 1 - min);
+        return Math.floor(rand);
+    }
+
+    shuffle(cardArray);
+    shuffle(cardArray);
+    shuffle(cardArray);
+    shuffle(cardArray);
+    shuffle(cardArray);
+
+</script>
 </body>
 </html>
