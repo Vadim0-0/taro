@@ -47,9 +47,20 @@
       margin-bottom: 60px;
       padding-left: 65px;
 
-      & button {
+      &__btn {
         padding: 21px;
         width: 250px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          border: 1px solid var(--siniy);
+        }
+
+        &.active {
+          background-color: var(--siniy);
+          color: var(--white);
+          border: 1px solid var(--siniy);
+        }
       }
     }
 
@@ -139,6 +150,12 @@
       margin-bottom: 157px;
       width: 446px;
       background-color: inherit;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background-color: rgba(15, 135, 187, 0.1);
+        border: 1px solid var(--siniy);
+      }
     }
 
     &-title {
@@ -184,6 +201,11 @@
       margin: auto;
       width: 446px;
       background-color: inherit;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        border: 1px solid var(--siniy);
+      }
     }
   }
 }
@@ -230,8 +252,8 @@
         background-color: var(--siniy);
 
         &:hover {
-          color: var(--siniy);
-          background-color: var(--white);
+          background-color: var(--temno-siniy);
+          color: var(--white);
         }
       }
     }
@@ -281,6 +303,13 @@
           width: 155px;
           padding: 21px;
           border-radius: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+
+          &.active {
+            background-color: var(--siniy);
+            color: var(--white);
+            border: 1px solid var(--siniy);
+          }
         }
       }
 
@@ -291,6 +320,15 @@
           padding: 18px;
           border-radius: 10px;
           background-color: inherit;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+
+          &:hover {
+            border: 1px solid var(--siniy);
+
+            & svg {
+              stroke: var(--siniy);
+            }
+          }
         }
       }
     }
@@ -385,6 +423,11 @@
           padding: 21px;
           color: var(--white);
           background-color: var(--siniy);
+
+          &:hover {
+            background-color: var(--temno-siniy);
+            color: var(--white);
+          }
         }
       }
     }
@@ -651,8 +694,8 @@
         background-color: var(--siniy);
 
         &:hover {
-          color: var(--siniy);
-          background-color: var(--white);
+          background-color: var(--temno-siniy);
+          color: var(--white);
         }
       }
 
@@ -746,8 +789,8 @@
           background-color: var(--siniy);
 
           &:hover {
-            color: var(--siniy);
-            background-color: var(--white);
+            color: var(--white);
+            background-color: var(--temno-siniy);
           }
         }
 
@@ -969,6 +1012,11 @@
           color: var(--white);
           background-color: var(--siniy);
           border: none;
+
+          &:hover {
+            background-color: var(--temno-siniy);
+            color: var(--white);
+          }
         }
       }
 
@@ -1077,6 +1125,23 @@
         justify-content: flex-start;
         border-radius: 10px;
         border: none;
+
+        &:hover {
+
+          & svg {
+
+            stroke: var(--siniy);
+          }
+        }
+
+        &.active {
+          color: var(--white);
+          background-color: var(--siniy);
+
+          & svg {
+            stroke: var(--white);
+          }
+        }
       }
     }
 
@@ -1144,6 +1209,10 @@
                 &:nth-child(1) {
                   color: var(--white);
                   background-color: var(--siniy);
+
+                  &:hover {
+                    background-color: var(--temno-siniy);
+                  }
                 }
 
 
@@ -1191,23 +1260,6 @@
                   @include flex-center;
                   border-radius: 10px;
 
-                  &:hover {
-                    color: rgba(16, 125, 172, 0.7);
-                    background-color: rgba(16, 125, 172, 0.1);
-
-                    & svg {
-                      stroke: #222222;
-                    }
-                  }
-
-                  &:active {
-                    color: var(--white);
-                    background-color: var(--siniy);
-
-                    & svg {
-                      stroke: var(--white);
-                    }
-                  }
                 }
               }
             }
@@ -1697,7 +1749,7 @@
               }
 
               &:hover {
-                background-color: rgba(15, 135, 187, 0.7);
+                background-color: var(--temno-siniy);
               }
             }
           }
@@ -1738,7 +1790,7 @@
           background-color: var(--siniy);
 
           &:hover {
-            background-color: rgba(15, 135, 187, 0.7);
+            background-color: var(--temno-siniy);
           }
         }
 
@@ -1804,8 +1856,8 @@
                 background-color: var(--siniy);
 
                 &:hover {
-                  color: var(--siniy);
-                  background-color: var(--white);
+                  color: var(--white);
+                  background-color: var(--temno-siniy);
                 }
               }
             }
@@ -1933,8 +1985,8 @@
       background-color: var(--siniy);
 
       &:hover {
-        color: var(--siniy);
-        background-color: var(--white);
+        color: var(--white);
+        background-color: var(--temno-siniy);
       }
     }
   }
@@ -2349,6 +2401,10 @@
               color: var(--temno-siniy);
               border: 1px solid rgba(1, 91, 131, 0.2);
               background-color: rgba(15, 135, 187, 0.1);
+
+              & svg {
+                stroke: var(--siniy);
+              }
             }
 
             &.active {
@@ -2997,8 +3053,8 @@
         background-color: var(--siniy);
 
         &:hover {
-          color: var(--siniy);
-          background-color: var(--white);
+          color: var(--white);
+          background-color: var(--temno-siniy);
         }
       }
 
@@ -3343,8 +3399,8 @@
             background-color: var(--siniy);
 
             &:hover {
-              color: var(--siniy);
-              background-color: var(--white);
+              color: var(--white);
+              background-color: var(--temno-siniy);
             }
           }
         }
@@ -3927,7 +3983,7 @@
         padding-left: 0;
         margin-bottom: 40px;
 
-        & button {
+        &__btn {
           width: 196px;
         }
       }
@@ -4050,6 +4106,11 @@
         &__btn {
           width: 100%;
           border-radius: 10px;
+
+          &:hover {
+            color: var(--white);
+            background-color: var(--siniy);
+          }
         }
       }
     }
@@ -4142,6 +4203,11 @@
 
           &-btn {
             border-radius: 10px;
+
+            &:hover {
+              color: var(--white);
+            background-color: var(--siniy);
+            }
           }
         }
       }
@@ -4171,6 +4237,7 @@
         display: flex;
         padding: 21px;
         background-color: inherit;
+        border: 1px solid rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -4203,6 +4270,7 @@
         display: flex;
         padding: 21px;
         background-color: inherit;
+        border: 1px solid rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -4246,6 +4314,11 @@
 
         &__btn {
           width: 100%;
+
+          &:hover {
+            background-color: var(--siniy);
+            color: var(--white);
+          }
         }
       }
     }
@@ -4555,6 +4628,14 @@
         width: 177px;
         height: 295px;
         perspective: 260px;
+      }
+
+      & button {
+
+        &:hover {
+          background-color: var(--siniy);
+          color: var(--white);
+        }
       }
     }
   }
