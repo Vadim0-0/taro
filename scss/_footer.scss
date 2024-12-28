@@ -79,6 +79,8 @@
             }
 
             &-btn {
+              color: var(--black);
+              background-color: var(--white);
               border-radius: 10px;
 
               &:hover {
