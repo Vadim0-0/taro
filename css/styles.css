@@ -915,6 +915,7 @@ button {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 14px;
+  line-height: 100%;
   color: var(--black);
   transition: all 0.3s ease-in-out;
 }
@@ -1214,10 +1215,6 @@ button {
   color: rgba(16, 125, 172, 0.7);
   background-color: rgba(16, 125, 172, 0.1);
 }
-.pop-up-search__content-nav button.active {
-  color: var(--white);
-  background-color: var(--siniy);
-}
 .pop-up-search__content-search__label {
   display: flex;
   justify-content: space-between;
@@ -1281,8 +1278,8 @@ button {
   transition: all 0.3s ease-in-out;
 }
 .pop-up-search__content-search__label-btns .search-btn:hover {
-  color: var(--siniy);
-  background-color: var(--white);
+  color: var(--white);
+  background-color: var(--temno-siniy);
 }
 .pop-up-search__content-search__label:hover .pop-up-search__content-search__label-btns .clear-btn {
   opacity: 1;
@@ -1390,6 +1387,10 @@ button {
   padding: 24px 10px;
   color: var(--white);
   background-color: var(--siniy);
+}
+.pop-up-favorite__content-btn:hover {
+  color: var(--white);
+  background-color: var(--temno-siniy);
 }
 
 .page-header {
@@ -1723,6 +1724,7 @@ button {
   }
   .header .header__content-links__search .header-search-open:hover {
     background-color: inherit;
+    border: 1px solid rgba(34, 34, 34, 0.2);
   }
   .header .header__content-links__search .header-search-open:hover svg {
     stroke: #222222;
@@ -1733,6 +1735,7 @@ button {
   }
   .header .header__content-links__search-btn:hover {
     background-color: inherit;
+    border: 1px solid rgba(34, 34, 34, 0.2);
   }
   .header .header__content-links__email {
     display: none;
@@ -1742,6 +1745,7 @@ button {
   }
   .header .header__content-links__list-item a:hover {
     background-color: inherit;
+    border: 1px solid rgba(34, 34, 34, 0.2);
   }
   .header .header__content-links__list-item a:hover svg {
     stroke: #222222;
@@ -4623,6 +4627,10 @@ button {
   margin-bottom: 20px;
   padding: 25px 20px;
   font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.authorization__content-btn:hover {
+  border: 1px solid var(--siniy);
 }
 .authorization__content-link {
   display: block;
