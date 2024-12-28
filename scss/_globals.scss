@@ -52,12 +52,10 @@ button {
   @include flex-center(10px);
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 14px;
   color: var(--black);
-  background-color: var(--white);
   @include transition;
 
   &:hover {
@@ -69,27 +67,9 @@ button {
     }
   }
 
-  &:active {
-    color: var(--white);
-    background-color: var(--siniy);
-
-    & svg {
-      stroke: var(--white);
-    }
-  }
-
   & svg {
     stroke: #222222;
     @include transition;
-  }
-
-  &.active {
-    color: var(--white);
-    background-color: var(--siniy);
-
-    & svg {
-      stroke: var(--white);
-    }
   }
 }
 
@@ -189,15 +169,6 @@ button {
 
         & svg {
           stroke: #222222;
-        }
-      }
-
-      &:active {
-        color: var(--white);
-        background-color: var(--siniy);
-
-        & svg {
-          stroke: var(--white);
         }
       }
     }
