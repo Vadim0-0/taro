@@ -1,43 +1,62 @@
 /* воспроизведение видео */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Получаем все контейнеры с видео
   const videoContainers = document.querySelectorAll('.reviews-video-block');
 
-  videoContainers.forEach(container => {
-      const video = container.querySelector('.reviews-video'); // Выбираем видео в контейнере
-      const playButton = container.querySelector('.reviews-video-btn'); // Выбираем кнопку запуска в контейнере
+  if (videoContainers.length === 0) {
+    return;
+  }
 
-      // Обработчик для кнопки запуска
-      playButton.addEventListener('click', () => {
-          video.style.display = 'block'; // Показать видео с элементами управления
-          video.play(); // Запуск видео
-          playButton.classList.add('hidden'); // Скрыть кнопку запуска
-      });
+  videoContainers.forEach(container => {
+    const video = container.querySelector('.reviews-video'); // Выбираем видео в контейнере
+    const playButton = container.querySelector('.reviews-video-btn'); // Выбираем кнопку запуска в контейнере
+
+    if (!video || !playButton) {
+      return;
+    }
+
+    // Обработчик для кнопки запуска
+    playButton.addEventListener('click', () => {
+      video.style.display = 'block'; // Показать видео с элементами управления
+      video.play(); // Запуск видео
+      playButton.classList.add('hidden'); // Скрыть кнопку запуска
+    });
   });
 });
 
+
 /* Отзывы - переключение высоты блока с текстом */
+document.addEventListener('DOMContentLoaded', () => {
+  // Получаем все кнопки
+  const buttons = document.querySelectorAll('.reviews-read-block__btn');
 
-document.querySelectorAll('.reviews-read-block__btn').forEach(button => {
-  button.addEventListener('click', function() {
-    // Находим блок с текстом по классу внутри родительского элемента
-    const descriptionBlock = button.parentElement.querySelector('.reviews-read-block__descr');
+  if (buttons.length === 0) {
+    return;
+  }
 
-    if (descriptionBlock.style.maxHeight) {
-      // Сбрасываем высоту для сворачивания текста
-      descriptionBlock.style.maxHeight = null;
-      button.textContent = 'Прочитать всё';
-    } else {
-      // Устанавливаем высоту по содержимому
-      descriptionBlock.style.maxHeight = descriptionBlock.scrollHeight + 'px';
-      button.textContent = 'Показать меньше';
-    }
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Находим блок с текстом по классу внутри родительского элемента
+      const descriptionBlock = button.parentElement.querySelector('.reviews-read-block__descr');
+
+      if (!descriptionBlock) {
+        return;
+      }
+
+      if (descriptionBlock.style.maxHeight) {
+        // Сбрасываем высоту для сворачивания текста
+        descriptionBlock.style.maxHeight = null;
+        button.textContent = 'Прочитать всё';
+      } else {
+        // Устанавливаем высоту по содержимому
+        descriptionBlock.style.maxHeight = descriptionBlock.scrollHeight + 'px';
+        button.textContent = 'Показать меньше';
+      }
+    });
   });
 });
 
 /* Отзывы - переключение блоков и  листание */
-
 document.addEventListener("DOMContentLoaded", function () {
   // Элементы для навигации
   const btnVideo = document.getElementById("reviews-video");
@@ -47,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnPrev = document.getElementById("reviews-btn-prev");
   const btnNext = document.getElementById("reviews-btn-next");
   const container = document.querySelector(".container"); // Контейнер для отслеживания отступа
+
+  if (!btnVideo || !btnRead || !reviewsVideoBlocks || !reviewsReadBlocks || !btnPrev || !btnNext || !container) {
+    return;
+  }
 
   // Начальные настройки
   let activeBlock = reviewsVideoBlocks; // По умолчанию показываем reviewsVideoBlocks
@@ -70,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Сдвиг блоков в начало экрана
     const translateX = -containerLeftMargin;
     reviewsVideoBlocks.style.transform = `translateX(${translateX - 15}px)`;
-    reviewsReadBlocks.style.transform = `translateX(${translateX -15}px)`;
+    reviewsReadBlocks.style.transform = `translateX(${translateX - 15}px)`;
   }
 
   // Вызываем функцию при загрузке страницы и при изменении размера окна
@@ -146,12 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
 /* Header - открыте меню */
-
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById('header');
+
+  if (!header) {
+    return;
+  }
+
   let lastScrollY = window.scrollY;
   let scrollThreshold = 30; // Adjust threshold for hiding the header
   let accumulatedScroll = 0;
@@ -183,6 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerContentMobile = document.querySelector(".pop-up-favorite");
   const body = document.body;
 
+  if (!headerMenuOpen || !headerMenuClose || !headerContentMobile) {
+    return;
+  }
+
   // Добавляем класс при нажатии на кнопку открытия
   headerMenuOpen.addEventListener("click", () => {
     headerContentMobile.classList.add("active");
@@ -202,6 +231,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerMenuClose = document.getElementById("header-menu-close");
   const headerContentMobile = document.querySelector(".header__content-mobile");
 
+  if (!headerMenuOpen || !headerMenuClose || !headerContentMobile) {
+    return;
+  }
+
   // Добавляем класс при нажатии на кнопку открытия
   headerMenuOpen.addEventListener("click", () => {
     headerContentMobile.classList.add("active");
@@ -213,7 +246,74 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const coursesContainer = document.getElementById("header-courses-courses");
+  const coursesButton = document.getElementById("header-courses-btn");
+  const coursesList = document.querySelector(".header-courses-list");
 
+  if (!coursesContainer || !coursesButton || !coursesList) {
+    return;
+  }
+
+  // Функция для установки высоты блока в зависимости от состояния
+  function toggleCourses() {
+      // Высота кнопки
+      const buttonHeight = coursesButton.offsetHeight;
+      // Высота списка
+      const listHeight = coursesList.scrollHeight;
+
+      if (coursesContainer.classList.contains("active")) {
+          // Возвращаем высоту на высоту кнопки
+          coursesContainer.style.height = `${buttonHeight}px`;
+          coursesContainer.classList.remove("active");
+      } else {
+          // Устанавливаем высоту блока на высоту кнопки + высоту списка
+          coursesContainer.style.height = `${buttonHeight + listHeight}px`;
+          coursesContainer.classList.add("active");
+      }
+  }
+
+  // Начальная высота равна высоте кнопки
+  coursesContainer.style.height = `${coursesButton.offsetHeight}px`;
+
+  // Добавляем обработчик клика на кнопку
+  coursesButton.addEventListener("click", toggleCourses);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const coursesBlock = document.getElementById("header-courses-block");
+  const coursesButton = document.getElementById("header-courses-open");
+  const coursesMenu = document.getElementById("courses-menu");
+
+  if (!coursesBlock || !coursesButton || !coursesMenu) {
+    return;
+  }
+
+  // Функция для переключения класса
+  function toggleCoursesBlock() {
+    coursesBlock.classList.toggle("active");
+  }
+
+  // Обработчик на кнопку, чтобы добавить/убрать класс
+  coursesButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Останавливаем всплытие, чтобы не закрыть меню сразу
+    toggleCoursesBlock();
+  });
+
+  // Обработчик на документ, чтобы закрыть меню при клике вне его
+  document.addEventListener("click", function (event) {
+    if (!coursesBlock.contains(event.target)) {
+      coursesBlock.classList.remove("active");
+    }
+  });
+
+  // Обработчик для закрытия меню при уходе курсора из меню
+  coursesMenu.addEventListener("mouseleave", function () {
+    coursesBlock.classList.remove("active");
+  });
+});
+
+/* pop-up-search */
 document.addEventListener("DOMContentLoaded", function () {
   const popUpSearch = document.querySelector(".pop-up-search");
   const popUpSearchContent = document.querySelector(".pop-up-search__content");
@@ -223,6 +323,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("pop-up-search-input"); // Поле поиска
   const searchContentPages = document.querySelector(".pop-up-search__content-pages");
   const cleanButton = document.getElementById("pop-up-search-clean-btn"); // Кнопка очистки
+
+  if (!popUpSearch || !popUpSearchContent || !openButtons || !closeButton || !body || !searchContentPages || !searchInput || !cleanButton) {
+    return;
+  }
 
   // Открытие pop-up при нажатии на любую кнопку с классом header-search-open
   openButtons.forEach(button => {
@@ -291,73 +395,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const coursesContainer = document.getElementById("header-courses-courses");
-  const coursesButton = document.getElementById("header-courses-btn");
-  const coursesList = document.querySelector(".header-courses-list");
-
-  // Функция для установки высоты блока в зависимости от состояния
-  function toggleCourses() {
-      // Высота кнопки
-      const buttonHeight = coursesButton.offsetHeight;
-      // Высота списка
-      const listHeight = coursesList.scrollHeight;
-
-      if (coursesContainer.classList.contains("active")) {
-          // Возвращаем высоту на высоту кнопки
-          coursesContainer.style.height = `${buttonHeight}px`;
-          coursesContainer.classList.remove("active");
-      } else {
-          // Устанавливаем высоту блока на высоту кнопки + высоту списка
-          coursesContainer.style.height = `${buttonHeight + listHeight}px`;
-          coursesContainer.classList.add("active");
-      }
-  }
-
-  // Начальная высота равна высоте кнопки
-  coursesContainer.style.height = `${coursesButton.offsetHeight}px`;
-
-  // Добавляем обработчик клика на кнопку
-  coursesButton.addEventListener("click", toggleCourses);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const coursesBlock = document.getElementById("header-courses-block");
-  const coursesButton = document.getElementById("header-courses-open");
-  const coursesMenu = document.getElementById("courses-menu");
-
-  // Функция для переключения класса
-  function toggleCoursesBlock() {
-    coursesBlock.classList.toggle("active");
-  }
-
-  // Обработчик на кнопку, чтобы добавить/убрать класс
-  coursesButton.addEventListener("click", function (event) {
-    event.stopPropagation(); // Останавливаем всплытие, чтобы не закрыть меню сразу
-    toggleCoursesBlock();
-  });
-
-  // Обработчик на документ, чтобы закрыть меню при клике вне его
-  document.addEventListener("click", function (event) {
-    if (!coursesBlock.contains(event.target)) {
-      coursesBlock.classList.remove("active");
-    }
-  });
-
-  // Обработчик для закрытия меню при уходе курсора из меню
-  coursesMenu.addEventListener("mouseleave", function () {
-    coursesBlock.classList.remove("active");
-  });
-});
-
-/* Index - листание блока */
-
 
 /* Index - faq */
-
 document.addEventListener('DOMContentLoaded', function() {
   // Получаем все элементы заголовков FAQ
   const faqHeaders = document.querySelectorAll('.index-faq__content-faq__item-header');
+
+  if (!faqHeaders) {
+    return;
+  }
 
   faqHeaders.forEach(header => {
     // Добавляем обработчик события клика на каждый заголовок
@@ -396,11 +442,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* Index - форма обратной связи */
-
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('feedback-form');
   const nameInput = document.getElementById('feedback-name');
   const telInput = document.getElementById('feedback-tel');
+
+  if (!form || !nameInput || !telInput) {
+    return;
+  }
 
   // Ограничение на ввод только букв в поле "Имя"
   nameInput.addEventListener('input', function (e) {
@@ -459,10 +508,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Листание листов с пагинацией */
-
 document.addEventListener('DOMContentLoaded', function () {
+  // Проверяем наличие контейнеров для страниц и пагинации
+  const paginationContainer = document.getElementById('pagination');
+  const cardContainer = document.getElementById('cardContainer');
+  const pages = document.querySelectorAll('[id^="page-"]');
+
+  // Прерываем выполнение, если элементы отсутствуют
+  if (!paginationContainer || !cardContainer || pages.length === 0) {
+    return;
+  }
+
   // Константы
-  let totalPages = document.querySelectorAll('[id^="page-"]').length; // Подсчитываем количество страниц
+  let totalPages = pages.length; // Подсчитываем количество страниц
   let currentPage = 1;
 
   // SVG-иконки для стрелок
@@ -475,62 +533,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Функция отображения выбранной страницы
   function showPage(page) {
-      for (let i = 1; i <= totalPages; i++) {
-          const pageElement = document.getElementById(`page-${i}`);
-          if (pageElement) pageElement.classList.remove('active');
-      }
+    for (let i = 1; i <= totalPages; i++) {
+      const pageElement = document.getElementById(`page-${i}`);
+      if (pageElement) pageElement.classList.remove('active');
+    }
 
-      const activePage = document.getElementById(`page-${page}`);
-      if (activePage) {
-          activePage.classList.add('active');
-          const cardContainer = document.getElementById('cardContainer');
-          cardContainer.style.height = `${activePage.offsetHeight}px`;
-      }
+    const activePage = document.getElementById(`page-${page}`);
+    if (activePage) {
+      activePage.classList.add('active');
+      cardContainer.style.height = `${activePage.offsetHeight}px`;
+    }
   }
 
   // Генерация кнопок пагинации
   function renderPagination() {
-      const pagination = document.getElementById('pagination');
-      pagination.innerHTML = '';
+    paginationContainer.innerHTML = '';
 
-      // Кнопка "Назад"
-      const prevButton = document.createElement('button');
-      prevButton.innerHTML = leftArrowSVG;
-      prevButton.className = currentPage === 1 ? 'disabled' : '';
-      prevButton.onclick = () => goToPage(currentPage - 1);
-      pagination.appendChild(prevButton);
+    // Кнопка "Назад"
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = leftArrowSVG;
+    prevButton.className = currentPage === 1 ? 'disabled' : '';
+    prevButton.onclick = () => goToPage(currentPage - 1);
+    paginationContainer.appendChild(prevButton);
 
-      // Кнопки для страниц
-      for (let i = 1; i <= totalPages; i++) {
-          if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-              const pageButton = document.createElement('button');
-              pageButton.innerText = i;
-              pageButton.className = i === currentPage ? 'active' : '';
-              pageButton.onclick = () => goToPage(i);
-              pagination.appendChild(pageButton);
-          } else if (i === currentPage - 3 || i === currentPage + 3) {
-              const dotsButton = document.createElement('button');
-              dotsButton.innerText = '...';
-              dotsButton.className = 'dots';
-              dotsButton.disabled = true; // Делаем кнопку неактивной
-              pagination.appendChild(dotsButton);
-          }
+    // Кнопки для страниц
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+        const pageButton = document.createElement('button');
+        pageButton.innerText = i;
+        pageButton.className = i === currentPage ? 'active' : '';
+        pageButton.onclick = () => goToPage(i);
+        paginationContainer.appendChild(pageButton);
+      } else if (i === currentPage - 3 || i === currentPage + 3) {
+        const dotsButton = document.createElement('button');
+        dotsButton.innerText = '...';
+        dotsButton.className = 'dots';
+        dotsButton.disabled = true; // Делаем кнопку неактивной
+        paginationContainer.appendChild(dotsButton);
       }
+    }
 
-      // Кнопка "Вперед"
-      const nextButton = document.createElement('button');
-      nextButton.innerHTML = rightArrowSVG;
-      nextButton.className = currentPage === totalPages ? 'disabled' : '';
-      nextButton.onclick = () => goToPage(currentPage + 1);
-      pagination.appendChild(nextButton);
+    // Кнопка "Вперед"
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = rightArrowSVG;
+    nextButton.className = currentPage === totalPages ? 'disabled' : '';
+    nextButton.onclick = () => goToPage(currentPage + 1);
+    paginationContainer.appendChild(nextButton);
   }
 
   // Переключение на указанную страницу
   function goToPage(page) {
-      if (page < 1 || page > totalPages) return;
-      currentPage = page;
-      showPage(currentPage);
-      renderPagination();
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    showPage(currentPage);
+    renderPagination();
   }
 
   // Инициализация
@@ -540,17 +596,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Страница поиска */
-
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем элементы по их идентификаторам
   const searchInput = document.getElementById('search-input');
   const clearButton = document.getElementById('clear-btn');
   const searchButton = document.getElementById('search-btn');
 
-  // Проверяем, что элементы существуют перед добавлением обработчиков событий
+  if (!searchInput || !clearButton || !searchButton) {
+    return;
+  }
+
   if (clearButton && searchInput) {
     clearButton.addEventListener('click', function() {
-      searchInput.value = ''; // Очистка поля ввода
+      searchInput.value = '';
     });
   }
 
@@ -567,12 +625,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-
 /* Страница продукта переключение изоражений */
-
 document.addEventListener('DOMContentLoaded', function () {
   const mainImage = document.querySelector(".productPage-hero__content-images__img img");
   const buttons = document.querySelectorAll(".productPage-hero__content-images__btns button");
+
+  if (!mainImage || !buttons) {
+    return;
+  }
 
   let currentIndex = 0;
 
@@ -619,18 +679,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Прохожждение теста */
-
 document.addEventListener("DOMContentLoaded", () => {
   let currentQuestionIndex = 0;
-  const questionsCount = document.querySelectorAll('.pageTest-test__content-questions__question').length;
+  const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
+  const questionsCount = questions.length;
+
+  // Проверка на наличие вопросов
+  if (!questionsCount) {
+    return;
+  }
 
   const prevButtons = document.querySelectorAll('.prev-button');
   const nextButtons = document.querySelectorAll('.next-button');
   const finishButton = document.querySelector('.finish-button');
   const restartButton = document.querySelector('.restart-button');
+  const stepsContainer = document.getElementById('pageTest-steps');
+  const resultBlock = document.getElementById('result');
+  const container = document.getElementById('question-container');
 
   function renderSteps() {
-      const stepsContainer = document.getElementById('pageTest-steps');
+      if (!stepsContainer) {
+        return;
+      }
+
       for (let i = 0; i < questionsCount; i++) {
           const stepButton = document.createElement('button');
           stepButton.classList.add('step-button');
@@ -645,12 +716,11 @@ document.addEventListener("DOMContentLoaded", () => {
       stepButtons.forEach((button, index) => {
           button.classList.toggle('completed', index < currentQuestionIndex);
           button.classList.toggle('active', index === currentQuestionIndex);
-          button.classList.toggle('current', index === currentQuestionIndex); // Добавляем класс current
+          button.classList.toggle('current', index === currentQuestionIndex); // Класс для текущего шага
       });
   }
 
   function updateQuestionVisibility() {
-      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach((question, index) => {
           question.classList.toggle('active', index === currentQuestionIndex);
           question.classList.toggle('fade-out', index !== currentQuestionIndex);
@@ -659,19 +729,24 @@ document.addEventListener("DOMContentLoaded", () => {
       updateQuestionCount();
       updateContainerHeight();
       markCompleted();
-      updateStepButtons(); // Обновляем состояние кнопок шагов
+      updateStepButtons();
   }
 
   function updateContainerHeight() {
-      const activeQuestion = document.querySelector('.pageTest-test__content-questions__question.active');
-      const resultBlock = document.getElementById('result');
-      const container = document.getElementById('question-container');
-      container.style.height = activeQuestion ? `${activeQuestion.offsetHeight}px` : `${resultBlock.offsetHeight}px`;
+
+    if (!container) {
+      return;
+    }
+
+    const activeQuestion = document.querySelector('.pageTest-test__content-questions__question.active');
+    container.style.height = activeQuestion ? `${activeQuestion.offsetHeight}px` : (resultBlock ? `${resultBlock.offsetHeight}px` : 'auto');
   }
 
   function updateQuestionCount() {
       const questionCountElement = document.querySelector('.pageTest-test__content-questions__question.active .question-count');
-      questionCountElement.textContent = `Вопрос ${currentQuestionIndex + 1} из ${questionsCount}`;
+      if (questionCountElement) {
+          questionCountElement.textContent = `Вопрос ${currentQuestionIndex + 1} из ${questionsCount}`;
+      }
   }
 
   function nextQuestion() {
@@ -691,9 +766,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showResult() {
-      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach(q => q.classList.remove('active'));
-      document.getElementById('result').style.display = 'block';
+      if (resultBlock) {
+          resultBlock.style.display = 'block';
+      }
       updateContainerHeight();
   }
 
@@ -701,9 +777,10 @@ document.addEventListener("DOMContentLoaded", () => {
       currentQuestionIndex = 0;
       updateStepButtons();
       updateQuestionVisibility();
-      document.getElementById('result').style.display = 'none';
+      if (resultBlock) {
+          resultBlock.style.display = 'none';
+      }
 
-      const questions = document.querySelectorAll('.pageTest-test__content-questions__question');
       questions.forEach(q => {
           const radios = q.querySelectorAll('input[type="radio"]');
           radios.forEach(radio => {
@@ -711,7 +788,8 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       });
 
-      document.querySelectorAll('.step-button').forEach(button => button.classList.remove('completed'));
+      const stepButtons = document.querySelectorAll('.step-button');
+      stepButtons.forEach(button => button.classList.remove('completed'));
 
       updateContainerHeight();
   }
@@ -732,19 +810,17 @@ document.addEventListener("DOMContentLoaded", () => {
       updateQuestionVisibility();
   }
 
+  // Добавляем обработчики
   prevButtons.forEach(button => button.onclick = prevQuestion);
-  nextButtons.forEach(button => {
-      button.onclick = () => {
-          if (currentQuestionIndex === questionsCount - 1) {
-              showResult();
-          } else {
-              nextQuestion();
-          }
-      };
-  });
+  nextButtons.forEach(button => button.onclick = nextQuestion);
 
-  finishButton.onclick = showResult;
-  restartButton.onclick = restartTest;
+  if (finishButton) {
+      finishButton.onclick = showResult;
+  }
+
+  if (restartButton) {
+      restartButton.onclick = restartTest;
+  }
 
   renderSteps();
   updateQuestionVisibility();
@@ -752,111 +828,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 /* Карта таро */
-
-/* document.addEventListener('DOMContentLoaded', () => {
-  const cardCount = 15;
-  const cardsContainer = document.getElementById('cards');
-  let cards = [];
-
-  const cardLinks = [
-      "https://example.com/card1", "https://example.com/card2", "https://example.com/card3",
-      "https://example.com/card4", "https://example.com/card5", "https://example.com/card6",
-      "https://example.com/card7", "https://example.com/card8", "https://example.com/card9",
-      "https://example.com/card10", "https://example.com/card11", "https://example.com/card12",
-      "https://example.com/card13", "https://example.com/card14", "https://example.com/card15"
-  ];
-
-  // Функция для создания карт
-  function createCards() {
-      for (let i = 0; i < cardCount; i++) {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          card.dataset.index = i;
-          card.dataset.link = cardLinks[i];
-          card.style.zIndex = cardCount - i;
-          card.style.opacity = 1 - i * 0.06;
-
-          const offset = (i % 2 === 0 ? -1 : 1) * Math.floor((i + 1) / 2) * 40;
-          card.style.transform = `translateX(${offset}px) translateZ(-${i * 15}px)`;
-
-          card.addEventListener('click', () => window.open(card.dataset.link, "_blank")); // Добавляем обработчик клика для перехода по ссылке
-
-          cards.push(card);
-          cardsContainer.appendChild(card);
-      }
-      updateCentralCardLink();
-  }
-
-  // Функция для перемещения карты на передний план
-  function bringToFront(index) {
-      const selectedCard = cards.splice(index, 1)[0];
-      cards.unshift(selectedCard);
-      updateCards();
-  }
-
-  // Обновление всех карт в карусели
-  function updateCards() {
-      cards.forEach((card, i) => {
-          card.style.zIndex = cardCount - i;
-          card.style.opacity = 1 - i * 0.06;
-
-          const offset = (i % 2 === 0 ? -1 : 1) * Math.floor((i + 1) / 2) * 40;
-          card.style.transform = `translateX(${offset}px) translateZ(-${i * 15}px)`;
-      });
-      updateCentralCardLink();
-  }
-
-  // Обновление ссылки на центральной карте
-  function updateCentralCardLink() {
-      cards.forEach(card => card.style.pointerEvents = 'all');
-      const frontCard = cards[0];
-      frontCard.style.pointerEvents = 'auto';
-      frontCard.onclick = () => window.open(frontCard.dataset.link, "_blank");
-  }
-
-  // Перемешивание карт и выбор случайной карты
-  function shuffleAndPick() {
-      cards.sort(() => Math.random() - 0.5);
-      const randomIndex = Math.floor(Math.random() * cards.length);
-      bringToFront(randomIndex);
-  }
-
-  // Настройка свайпа
-  function setupSwipe() {
-      let startX = 0;
-      let endX = 0;
-
-      cardsContainer.addEventListener('mousedown', (e) => startX = e.clientX);
-      cardsContainer.addEventListener('mouseup', (e) => {
-          endX = e.clientX;
-          handleSwipe();
-      });
-
-      cardsContainer.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
-      cardsContainer.addEventListener('touchend', (e) => {
-          endX = e.changedTouches[0].clientX;
-          handleSwipe();
-      });
-
-      function handleSwipe() {
-          if (startX - endX > 50) {
-              bringToFront(1); // Свайп влево: следующая карта на передний план
-          } else if (endX - startX > 50) {
-              bringToFront(cards.length - 1); // Свайп вправо: последняя карта вперед
-          }
-      }
-  }
-
-  createCards();
-  setupSwipe();
-  document.getElementById('shuffleBtn').addEventListener('click', shuffleAndPick);
-}); */
-
-
 document.addEventListener('DOMContentLoaded', function () {
   const carouselItems = document.querySelectorAll('.carousel-item');
+
+  if (!carouselItems) {
+    return;
+  }
 
   carouselItems.forEach(item => {
     item.addEventListener('click', function () {
@@ -871,12 +849,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 /* Карта таро - перемещение изображения при листании */
-
 document.addEventListener("DOMContentLoaded", function () {
   const imgContainer = document.getElementById('pageCardDay-hero__content-img');
   const heroContent = document.getElementById('pageCardDay-hero__content');
+
+  if (!imgContainer || !heroContent) {
+    return;
+  }
 
   if (imgContainer && heroContent) {
     const computedStyle = window.getComputedStyle(imgContainer);
@@ -915,12 +895,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* Карта таро - листание блока */
-
 document.addEventListener("DOMContentLoaded", function () {
   const cardList = document.querySelector(".pageCardDay-hero__content-scroll__list");
   const cards = document.querySelectorAll(".product-card");
   const btnPrev = document.getElementById("pageCardDay-btn-prev");
   const btnNext = document.getElementById("pageCardDay-btn-next");
+
+  if (!cardList || !cards || !btnPrev || !btnNext ) {
+    return;
+  }
 
   let currentIndex = 0;
   let isAnimating = false;
@@ -1003,12 +986,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* Блог - открытие категории в мобильной версии */
-
 document.addEventListener('DOMContentLoaded', function() {
   const categoriesBlock = document.getElementById('blogs-categories-block');
   const toggleButton = document.getElementById('blogs-categories-title');
-  const contentBlock = categoriesBlock.querySelector('.blogs-hero__content-left__block-choice');
+  const contentBlock = categoriesBlock?.querySelector('.blogs-hero__content-left__block-choice');
   let isExpanded = false;
+
+  if (!categoriesBlock || !toggleButton || !contentBlock) {
+    return;
+  }
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
@@ -1051,7 +1037,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* Блог - комментарии */
-
 document.addEventListener("DOMContentLoaded", () => {
   const getDeclension = (number, singular, few, many) => {
     const mod10 = number % 10;
@@ -1067,6 +1052,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const topBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-top');
       const bottomBlock = block.querySelector('.blogs-hero__content-info__comments-bloсks__block-bottom');
       const answersButton = block.querySelector('.pageBlog-comments-answers');
+
+      if (!topBlock || !bottomBlock || !answersButton) {
+        return;
+      }
 
       if (topBlock && answersButton) {
         block.style.height = `${topBlock.getBoundingClientRect().height}px`;
@@ -1142,12 +1131,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* Курсы - открытие категории в мобильной версии */
-
 document.addEventListener('DOMContentLoaded', function() {
   const categoriesBlock = document.getElementById('courses-categories-block');
   const toggleButton = document.getElementById('courses-categories-title');
-  const contentBlock = categoriesBlock.querySelector('.courses-hero__content-left__block-choice');
+  const contentBlock = categoriesBlock?.querySelector('.courses-hero__content-left__block-choice');
   let isExpanded = false;
+
+  if (!categoriesBlock || !toggleButton || !contentBlock) {
+    return;
+  }
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
@@ -1191,7 +1183,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /* Магазин - сброс фильра */
-
 document.addEventListener("DOMContentLoaded", function() {
   // Function to clear category checkboxes
   const clearCategories = () => {
@@ -1224,12 +1215,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /* Магазин - открытие фильтра в мобильной версии */
-
 document.addEventListener('DOMContentLoaded', function() {
   const categoriesBlock = document.getElementById('shops-categories-block');
   const toggleButton = document.getElementById('shops-categories-title');
-  const contentBlock = categoriesBlock.querySelector('.shops-hero__content-left__block');
+  const contentBlock = categoriesBlock?.querySelector('.shops-hero__content-left__block');
   let isExpanded = false;
+
+  if (!categoriesBlock || !toggleButton || !contentBlock) {
+    return;
+  }
 
   function setInitialHeight() {
     if (window.innerWidth <= 768) {
@@ -1466,4 +1460,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
