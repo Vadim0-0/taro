@@ -55,6 +55,7 @@ button {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 14px;
+  line-height: 100%;
   color: var(--black);
   @include transition;
 
@@ -399,11 +400,6 @@ button {
           color: rgba(16, 125, 172, 0.7);
           background-color: rgba(16, 125, 172, 0.1);
         }
-
-        &.active {
-          color: var(--white);
-          background-color: var(--siniy);
-        }
       }
     }
 
@@ -461,8 +457,8 @@ button {
             @include transition;
 
             &:hover {
-              color: var(--siniy);
-              background-color: var(--white);
+              color: var(--white);
+              background-color: var(--temno-siniy);
             }
           }
         }
@@ -591,6 +587,11 @@ button {
       padding: 24px 10px;
       color: var(--white);
       background-color: var(--siniy);
+
+      &:hover {
+        color: var(--white);
+        background-color: var(--temno-siniy);
+      }
     }
   }
 }
