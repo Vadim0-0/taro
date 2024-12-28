@@ -286,8 +286,10 @@
 
 
           .header-search-open {
+
             &:hover {
               background-color: inherit;
+              border: 1px solid rgba(34, 34, 34, 0.2);
 
               & svg {
                 stroke: #222222;
@@ -301,6 +303,7 @@
 
             &:hover {
               background-color: inherit;
+              border: 1px solid rgba(34, 34, 34, 0.2);
             }
           }
         }
@@ -319,6 +322,7 @@
             & a {
               &:hover {
                 background-color: inherit;
+                border: 1px solid rgba(34, 34, 34, 0.2);
 
                 & svg {
                   stroke: #222222;
