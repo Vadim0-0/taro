@@ -864,8 +864,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const link = item.getAttribute('data-link');
         if (link) {
           window.location.href = link;
-        } else {
-          console.error('Ссылка для элемента с data-id ' + item.getAttribute('data-id') + ' не найдена.');
         }
       }
     });
