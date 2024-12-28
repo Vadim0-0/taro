@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const screenWidth = window.innerWidth;
 
     // Устанавливаем ширину блоков равной ширине экрана
-    reviewsVideoBlocks.style.width = `${screenWidth - 5}px`;
+    reviewsVideoBlocks.style.width = `${screenWidth}px`;
     reviewsReadBlocks.style.width = `${screenWidth}px`;
 
     // Обновляем отступы
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Сдвиг блоков в начало экрана
     const translateX = -containerLeftMargin;
-    reviewsVideoBlocks.style.transform = `translateX(${translateX}px)`;
-    reviewsReadBlocks.style.transform = `translateX(${translateX}px)`;
+    reviewsVideoBlocks.style.transform = `translateX(${translateX - 15}px)`;
+    reviewsReadBlocks.style.transform = `translateX(${translateX -15}px)`;
   }
 
   // Вызываем функцию при загрузке страницы и при изменении размера окна
@@ -856,51 +856,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Хранение ссылок для элементов с data-id
-  const links = {
-    0: 'https://example.com/link0',
-    1: 'https://example.com/link1',
-    2: 'https://example.com/link2',
-    3: 'https://example.com/link3',
-    4: 'https://example.com/link4',
-    5: 'https://example.com/link5',
-    6: 'https://example.com/link6',
-    7: 'https://example.com/link7',
-    8: 'https://example.com/link8',
-    9: 'https://example.com/link9',
-    10: 'https://example.com/link10',
-    11: 'https://example.com/link11',
-    12: 'https://example.com/link12',
-    13: 'https://example.com/link13',
-    14: 'https://example.com/link14',
-    15: 'https://example.com/link15',
-    16: 'https://example.com/link16',
-    17: 'https://example.com/link17',
-    18: 'https://example.com/link18',
-    19: 'https://example.com/link19',
-    20: 'https://example.com/link20',
-    21: 'https://example.com/link21',
-    22: 'https://example.com/link22',
-    23: 'https://example.com/link23',
-    24: 'https://example.com/link24',
-    25: 'https://example.com/link25',
-    26: 'https://example.com/link26',
-    27: 'https://example.com/link27',
-    28: 'https://example.com/link28',
-    29: 'https://example.com/link29',
-    30: 'https://example.com/link30',
-  };
-
   const carouselItems = document.querySelectorAll('.carousel-item');
 
   carouselItems.forEach(item => {
     item.addEventListener('click', function () {
       if (item.classList.contains('active')) {
-        const dataId = item.getAttribute('data-id');
-        if (links[dataId]) {
-          window.location.href = links[dataId];
+        const link = item.getAttribute('data-link');
+        if (link) {
+          window.location.href = link;
         } else {
-          console.error('Ссылка для data-id ' + dataId + ' не найдена.');
+          console.error('Ссылка для элемента с data-id ' + item.getAttribute('data-id') + ' не найдена.');
         }
       }
     });
