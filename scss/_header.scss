@@ -88,11 +88,6 @@
               color: var(--siniy);
               background-color: rgba(16, 125, 172, 0.1)
             }
-
-            &:active {
-              color: var(--white);
-              background-color: var(--siniy);
-            }
           }
 
           & button {
@@ -121,15 +116,6 @@
                 stroke: var(--siniy);
               }
             }
-
-            &:active {
-              color: var(--white);
-              background-color: var(--siniy);
-
-              & svg {
-                stroke: var(--white);
-              }
-            }
           }
 
           &-mobile {
@@ -147,6 +133,17 @@
       &__favorite {
         border-radius: 10px;
         margin-right: 10px;
+        border: 1px solid rgba(34, 34, 34, 0.2);
+
+        &:hover {
+          color: var(--siniy);
+          border: 1px solid var(--siniy);
+          background-color: rgba(15, 135, 187, 0.1);
+
+          & svg {
+            stroke:  var(--siniy);
+          }
+        }
       }
 
       &__search {
@@ -156,6 +153,17 @@
 
         & button {
           border-radius: 10px;
+          border: 1px solid rgba(34, 34, 34, 0.2);
+
+          &:hover {
+            color: var(--siniy);
+            border: 1px solid var(--siniy);
+            background-color: rgba(15, 135, 187, 0.1);
+
+            & svg {
+              stroke:  var(--siniy);
+            }
+          }
         }
 
         &-btn {
@@ -173,16 +181,13 @@
 
         &.header__content-links__email {
           color: rgba(0, 0, 0, 0.7);
+          border: 1px solid var(--seryy);
           @include transition;
 
           &:hover {
             color: var(--siniy);
-            background-color: rgba(16, 125, 172, 0.1)
-          }
-
-          &:active {
-            color: var(--white);
-            background-color: var(--siniy);
+            background-color: rgba(16, 125, 172, 0.1);
+            border: 1px solid var(--siniy);
           }
         }
       }
@@ -193,6 +198,17 @@
         &-item  {
           & a {
             height: 46px;
+            border: 1px solid rgba(34, 34, 34, 0.2);
+
+            &:hover {
+              color: var(--siniy);
+              border: 1px solid var(--siniy);
+              background-color: rgba(15, 135, 187, 0.1);
+
+              & svg {
+                stroke:  var(--siniy);
+              }
+            }
           }
 
           &:nth-child(1) {
@@ -268,9 +284,24 @@
           @include flex-center(10px);
           border-left: none;
 
+
+          .header-search-open {
+            &:hover {
+              background-color: inherit;
+
+              & svg {
+                stroke: #222222;
+              }
+            }
+          }
+
           &-btn {
             display: flex;
             border-radius: 10px;
+
+            &:hover {
+              background-color: inherit;
+            }
           }
         }
 
@@ -283,6 +314,16 @@
           &-item {
             &:nth-child(1) {
               display: none;
+            }
+
+            & a {
+              &:hover {
+                background-color: inherit;
+
+                & svg {
+                  stroke: #222222;
+                }
+              }
             }
           }
         }
